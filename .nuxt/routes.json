@@ -1,0 +1,16 @@
+[
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/inspire.vue",
+    "chunkName": "pages/inspire",
+    "_name": "_1597ef12"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_b34d80a2"
+  }
+]
