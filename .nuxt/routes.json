@@ -1,5 +1,12 @@
 [
   {
+    "name": "about",
+    "path": "/about",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/about/index.vue",
+    "chunkName": "pages/about/index",
+    "_name": "_b175d826"
+  },
+  {
     "name": "inspire",
     "path": "/inspire",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/inspire.vue",
@@ -12,5 +19,12 @@
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/index.vue",
     "chunkName": "pages/index",
     "_name": "_b34d80a2"
+  },
+  {
+    "name": "slug",
+    "path": "/:slug",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/_slug/index.vue",
+    "chunkName": "pages/_slug/index",
+    "_name": "_cfbb08ac"
   }
 ]
