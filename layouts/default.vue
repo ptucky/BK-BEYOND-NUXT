@@ -3,7 +3,6 @@
     <v-app-bar
       flat
       fixed
-     
       width="100%"
       id="app-bar"
     >
@@ -15,20 +14,22 @@
         >
       </nuxt-link>
     <v-spacer />
-      <v-tabs
-        light
-        centered
+      <v-row
+        align="center"
+        justify="space-around"
         class="hidden-sm-and-down hidden-xs-only"
         id="app-bar-tab"
-        >
-        <v-tab 
+      >
+        <v-btn text
           v-for="(item, i) in mainMenu"
           :key="i"
-          class="m-sub-menu-padding top-menu-dt app-bar-tabs"
+          class="m-sub-menu-padding top-menu-dt"
           :to="item.to"
-          flat
-        >{{ item.title }}</v-tab>
-      </v-tabs>
+        >
+          {{ item.title }}
+        </v-btn>
+        
+      </v-row>
     <v-spacer />
       <v-icon class="pl-3">
         mdi-magnify
@@ -192,9 +193,6 @@ export default {
 
               document.getElementById('app-bar-tab').style.transition = '.2s'
               document.getElementById('app-bar-tab').style.height = '65px'
-              document.querySelector('.app-bar-tabs').style.transition = '.2s'
-              document.querySelector('.app-bar-tabs').style.height = '65px'
-              document.querySelector('.v-item-group').style.height = '65px'
             }
             
           } else {
@@ -212,8 +210,6 @@ export default {
               document.getElementById('app-bar').style.height = '75px'
 
               document.getElementById('app-bar-tab').style.height = '75px'
-              document.querySelector('.app-bar-tabs').style.height = '75px'
-              document.querySelector('.v-item-group').style.height = 'auto'
             }
             
           }
