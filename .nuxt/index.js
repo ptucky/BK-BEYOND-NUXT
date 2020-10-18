@@ -14,6 +14,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 import nuxt_plugin_plugin_b3c48d0e from 'nuxt_plugin_plugin_b3c48d0e' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_plugin_68a3a515 from 'nuxt_plugin_plugin_68a3a515' // Source: ./vuetify/plugin.js (mode: 'all')
+import nuxt_plugin_libplugince48e68e_4570184f from 'nuxt_plugin_libplugince48e68e_4570184f' // Source: ./lib.plugin.ce48e68e.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -59,7 +60,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"titleTemplate":"%s - BK-BEYOND","title":"BK-BEYOND | Online News and Events","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"},{"hid":"description","name":"description","content":""},{"name":"theme-color","content":"#FFF"},{"hid":"keywords","name":"keywords","content":"Bangkok news, evetns, tourist place, restaurant, life style in Bangkok"},{"hid":"description","name":"description","content":"Updated Bangkok news, evetns, tourist place, restaurant and life style"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
+    head: {"titleTemplate":"%s - BK-BEYOND","title":"BK-BEYOND | Online News and Events","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"},{"hid":"description","name":"description","content":""},{"name":"theme-color","content":"#FFF"},{"hid":"keywords","name":"keywords","content":"Bangkok news, evetns, tourist place, restaurant, life style in Bangkok"},{"hid":"description","name":"description","content":"Updated Bangkok news, evetns, tourist place, restaurant and life style"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
 
     router,
     nuxt: {
@@ -179,6 +180,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_plugin_68a3a515 === 'function') {
     await nuxt_plugin_plugin_68a3a515(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_libplugince48e68e_4570184f === 'function') {
+    await nuxt_plugin_libplugince48e68e_4570184f(app.context, inject)
   }
 
   // Lock enablePreview in context

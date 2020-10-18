@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nuxtjs/component-cache": "^1.1.6",
+    "@nuxtjs/device": "^1.2.7",
     "@tryghost/content-api": "^1.4.7",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",

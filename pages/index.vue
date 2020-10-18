@@ -27,7 +27,7 @@
 import { getPosts } from '~/api/posts';
 
 export default {
-  scrollToTop: true,
+  //scrollToTop: true,
   components: {
 
   },

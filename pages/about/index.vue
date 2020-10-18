@@ -16,7 +16,7 @@
 import { getPage } from '~/api/posts';
 
 export default {
-  scrollToTop: true,
+  //scrollToTop: true,
   components: {
 
   },

@@ -16,14 +16,11 @@
 import { getSinglePost } from '~/api/posts';
 
 export default {
-    scrollToTop: true,
+    //scrollToTop: true,
     components: {
 
     },
     async asyncData ({params}) {
-        console.log("###")
-        console.log(params)
-
         const post = await getSinglePost(params.slug);
         return { post: post }
     }

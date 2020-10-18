@@ -2,66 +2,53 @@
   <v-app>
     <v-app-bar
       flat
-      absolute
-      elevate-on-scroll
-      color="transparent"
-      scroll-target="#scrolling-techniques-7"
-      height="80px"
+      fixed
+     
+      width="100%"
+      id="app-bar"
     >
       <nuxt-link to="/">
         <img
-          class="bkbeyond-logo"
+          id="bkbeyond-logo"
           alt="Bangkok Beyond Logo"
           src="~/assets/images/bk-beyong-logo.png"
         >
       </nuxt-link>
-    
-      <v-spacer />
-           
+    <v-spacer />
       <v-tabs
+        light
         centered
-        class="hidden-sm-and-down hidden-xs-only">
+        class="hidden-sm-and-down hidden-xs-only"
+        id="app-bar-tab"
+        >
         <v-tab 
           v-for="(item, i) in mainMenu"
           :key="i"
-          class="m-sub-menu-padding top-menu-dt"
+          class="m-sub-menu-padding top-menu-dt app-bar-tabs"
           :to="item.to"
           flat
-          :class="{ active: isActive(item.title) }"
-          @click="setActive(item.title);"
         >{{ item.title }}</v-tab>
       </v-tabs>
-      
-      <v-spacer />
-
-        <v-icon
-          class="pl-3"
-        >
-          mdi-magnify
-        </v-icon>
-   
-        <v-icon 
-          @click.stop="rightDrawer = !rightDrawer"
-          class="hidden-lg-and-up pl-3"
-        >
-          mdi-menu
-        </v-icon>
+    <v-spacer />
+      <v-icon class="pl-3">
+        mdi-magnify
+      </v-icon>
+      <v-icon 
+        @click.stop="rightDrawer = !rightDrawer"
+        class="hidden-lg-and-up pl-3"
+      >
+        mdi-menu
+      </v-icon>
     </v-app-bar>
-    
-    <v-sheet
-      id="scrolling-techniques-7"
-      class="overflow-y-auto"
-      max-height="100vh"
-    >
-      <v-container>
-        <v-main class="mt-16">
-          <v-container>
-            <nuxt />
-          </v-container>
-        </v-main>
-      </v-container>
-    </v-sheet>
-
+  
+    <v-container class="mt-16">
+      <v-main >
+        <v-container>
+          <nuxt />
+        </v-container>
+      </v-main>
+    </v-container>
+  
     <v-navigation-drawer
       v-model="rightDrawer"
       :right="right"
@@ -111,10 +98,7 @@ export default {
   },
   data () {
     return {
-      activeMenu: null,
-      clipped: false,
-      drawer: false,
-      fixed: false,
+      loading: false,
       mainMenu: [
         {
           icon: 'mdi-apps',
@@ -162,33 +146,82 @@ export default {
           to: 'about'
         }
       ],
+      clipped: false,
+      drawer: false,
+      fixed: false,
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'BK-BEYOND'
     }
   },
   mounted() {
-    
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
+
+    document.querySelector('.theme--light.v-app-bar.v-toolbar.v-sheet').style.background = 'transparent'
+    let checkDeveice = ''
+    if (this.$device.isMobile) {
+      checkDeveice = 'mobile'
+    }
+
+    this.handleScrollTopbar(checkDeveice)
   },
   methods: {
+    handleScrollTopbar(checkDeveice) {
+      window.addEventListener(
+        'scroll',
+        function () {
+          /** tool bar */
+          if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) 
+          {
+
+            document.getElementById('bkbeyond-logo').style.transition = '.2s'
+            document.querySelector('.theme--light.v-app-bar.v-toolbar.v-sheet').style.background = '#e2e4eb'
+
+            if (checkDeveice == 'mobile') {
+              document.getElementById('bkbeyond-logo').style.paddingTop = '10px'
+              document.getElementById('bkbeyond-logo').style.width = '100px'
+            } else {
+              document.getElementById('bkbeyond-logo').style.paddingTop = '15px'
+              document.getElementById('bkbeyond-logo').style.width = '115px'
+              document.getElementById('app-bar').style.transition = '.2s'
+              document.getElementById('app-bar').style.marginTop = '-5px'
+              document.getElementById('app-bar').style.height = '65px'
+
+              document.getElementById('app-bar-tab').style.transition = '.2s'
+              document.getElementById('app-bar-tab').style.height = '65px'
+              document.querySelector('.app-bar-tabs').style.transition = '.2s'
+              document.querySelector('.app-bar-tabs').style.height = '65px'
+              document.querySelector('.v-item-group').style.height = '65px'
+            }
+            
+          } else {
+
+            document.querySelector('.theme--light.v-app-bar.v-toolbar.v-sheet').style.background = 'transparent'
+
+            if (checkDeveice == 'mobile') {
+              document.getElementById('bkbeyond-logo').style.paddingTop = '15px'
+              document.getElementById('bkbeyond-logo').style.width = '110px'
+              
+            } else {
+              document.getElementById('bkbeyond-logo').style.paddingTop = '20px'
+              document.getElementById('bkbeyond-logo').style.width = '140px'
+              document.getElementById('app-bar').style.marginTop = '0px'
+              document.getElementById('app-bar').style.height = '75px'
+
+              document.getElementById('app-bar-tab').style.height = '75px'
+              document.querySelector('.app-bar-tabs').style.height = '75px'
+              document.querySelector('.v-item-group').style.height = 'auto'
+            }
+            
+          }
+        },
+        true
+      )
+    },
     
-    isActive: function (menuItem) {
-      return this.activeMenu === menuItem
-    },
-    startLoading() {
-      this.loading = true
-    },
-    finishLoading() {
-      this.loading = false
-    },
-    setActive: function (menuItem) {
-      this.activeMenu = menuItem
-      this.startLoading()
-      this.$nextTick(() => {
-        setTimeout(() => this.finishLoading(), 300)
-      })
-    },
   }
 }
 </script>

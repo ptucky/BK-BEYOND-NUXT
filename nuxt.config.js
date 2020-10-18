@@ -7,7 +7,7 @@ export default {
     title: 'BK-BEYOND | Online News and Events',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' },
       { hid: 'description', name: 'description', content: '' },
       { name: "theme-color", content: "#FFF" },
       {
@@ -31,6 +31,20 @@ export default {
     baseUrlPicApi: process.env.BASE_URL_PIC_API || "http://localhost",
   },
 
+  /**
+   * Custom set port for dev & mobile
+   */
+  server: {
+    port: 3334, // default: 3000
+    host: "0.0.0.0" // default: localhost
+  },
+
+  /*
+   ** Customize the progress-bar color
+   */
+  loading: true,
+  loading: { color: "#f9da5c" , height: '3px'},
+  
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     "~/assets/style.scss",
@@ -72,7 +86,8 @@ export default {
         max: 10000,
         maxAge: 1000 * 60 * 60
       }
-    ]
+    ],
+    '@nuxtjs/device',
   ],
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
