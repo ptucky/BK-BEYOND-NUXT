@@ -28,7 +28,6 @@
         >
           {{ item.title }}
         </v-btn>
-        
       </v-row>
     <v-spacer />
       <v-icon class="pl-3">
@@ -41,8 +40,8 @@
         mdi-menu
       </v-icon>
     </v-app-bar>
-  
-    <v-container class="mt-16">
+
+    <v-container fluid class="mt-10">
       <v-main >
         <v-container>
           <nuxt />
@@ -95,7 +94,7 @@
 export default {
   scrollToTop: true,
   components: {
-    // BkBeyondLogo
+
   },
   data () {
     return {
@@ -104,47 +103,42 @@ export default {
         {
           icon: 'mdi-apps',
           title: "What's happening",
-          to: '/'
+          to: '/what-happending'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Cuisine',
-          to: '/inspire'
+          to: '/cuisine'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Hot Hotels',
-          to: '#'
+          to: '/hotel'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Lifestyle',
-          to: '#'
+          to: '/lifestyle'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Talk',
-          to: '#'
+          to: '/talk'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Properties',
-          to: '#'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Unwind',
-          to: '#'
+          to: '/properties'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Contact',
-          to: '#'
+          to: '/contact'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'About',
-          to: 'about'
+          to: '/about'
         }
       ],
       clipped: false,
@@ -182,8 +176,10 @@ export default {
             document.querySelector('.theme--light.v-app-bar.v-toolbar.v-sheet').style.background = '#e2e4eb'
 
             if (checkDeveice == 'mobile') {
-              document.getElementById('bkbeyond-logo').style.paddingTop = '10px'
-              document.getElementById('bkbeyond-logo').style.width = '100px'
+              document.getElementById('bkbeyond-logo').style.paddingTop = '2px'
+              document.getElementById('bkbeyond-logo').style.width = '90px'
+              document.getElementById('app-bar').style.height = '50px'
+
             } else {
               document.getElementById('bkbeyond-logo').style.paddingTop = '15px'
               document.getElementById('bkbeyond-logo').style.width = '115px'
@@ -200,9 +196,10 @@ export default {
             document.querySelector('.theme--light.v-app-bar.v-toolbar.v-sheet').style.background = 'transparent'
 
             if (checkDeveice == 'mobile') {
-              document.getElementById('bkbeyond-logo').style.paddingTop = '15px'
-              document.getElementById('bkbeyond-logo').style.width = '110px'
-              
+              document.getElementById('bkbeyond-logo').style.paddingTop = '10px'
+              document.getElementById('bkbeyond-logo').style.width = '105px'
+              document.getElementById('app-bar').style.height = '56px'
+
             } else {
               document.getElementById('bkbeyond-logo').style.paddingTop = '20px'
               document.getElementById('bkbeyond-logo').style.width = '140px'

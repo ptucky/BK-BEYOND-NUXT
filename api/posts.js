@@ -1,6 +1,11 @@
 import GhostContentAPI from "@tryghost/content-api";
+/**
+ * Doc how to use Content API Client Library
+ * https://ghost.org/docs/api/v3/javascript/content/
+ * https://ghost.org/docs/api/v3/content/#api-clients
+*/
 
-// Create API instance with site credentials
+/** Create API instance with site credentials */
 const api = new GhostContentAPI(
     {
         url: "http://localhost:2368",
@@ -9,10 +14,10 @@ const api = new GhostContentAPI(
     }
 )
 
+/** Get Post */
 export async function getPosts() 
 {
-    return await api.posts
-    .browse({
+    return await api.posts.browse({
         limit: "all",
         include: "tags,authors"
     })
@@ -21,10 +26,10 @@ export async function getPosts()
     });
 }
 
-export async function getSinglePost(postSlug) 
+/** Get Post Detail */
+export async function getPostDetail(postSlug) 
 {
-    return await api.posts
-    .read({
+    return await api.posts.read({
         slug: postSlug,
     })
     .catch(err => {
@@ -32,13 +37,29 @@ export async function getSinglePost(postSlug)
     });
 }
 
+/** Pages */
 export async function getPage(pageSlug) 
 {
-    return await api.pages
-    .read({
+    return await api.pages.read({
         slug: pageSlug,
     })
     .catch(err => {
         console.error(err);
     });
 }
+
+
+/** */
+export async function getTags(tagName) 
+{
+    return await api.posts.browse(
+        {
+            limit: "all",
+            filter: 'tag:cuisine'
+        }
+    )
+    .catch(err => {
+        console.error(err);
+    });
+}
+

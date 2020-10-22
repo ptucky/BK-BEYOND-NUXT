@@ -20,7 +20,7 @@ export default {
 
   },
   async asyncData () {
-    const page = await getPage('about');
+    const page = await getPage('contact');
     return { page: page }
   }
 }

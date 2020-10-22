@@ -1,28 +1,48 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-
-    <img :src="post.feature_image" class="img-post">
-    <h1 v-if="post.title" v-text="post.title" class="text-center"></h1>
-    <div class="text-justify">
-        <div v-if="post.html" v-html="post.html"></div>
-    </div>
-
-    </v-col>
+  <v-row class="row-cover-box" justify="center">
+    <PostDetailView v-if="post" :postData="post" />
+    <TagsListView v-if="tags" :tagDatas="tags" />
   </v-row>
 </template>
 
 <script>
-import { getSinglePost } from '~/api/posts';
+import { getPostDetail, getTags } from '~/api/posts';
 
 export default {
-    //scrollToTop: true,
     components: {
-
+      TagsListView: () => import('~/components/Tags.vue'),
+      PostDetailView: () => import('~/components/PostDetail.vue'),
+    },
+    data() {
+      return {
+        post: [],
+        tags: []
+      }
     },
     async asyncData ({params}) {
-        const post = await getSinglePost(params.slug);
+      if(params.slug === "what-happending" ||
+        params.slug === "cuisine" || 
+        params.slug === "hotel" ||
+        params.slug === "lifestyle" ||
+        params.slug === "talk" ||
+        params.slug === "properties"
+      )
+      {
+        // call component for tag 
+        const tags = await getTags(params.slug)
+        return { tags: tags }
+
+      } else {
+
+         // call component for single post 
+        const post = await getPostDetail(params.slug)
         return { post: post }
+
+      }
+      
+    },
+    methods: {
+
     }
 }
 </script>
