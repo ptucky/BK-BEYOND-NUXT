@@ -1,8 +1,24 @@
 <template>
   <v-app>
+    <v-alert
+      border="bottom"
+      dense
+      text
+      color="blue-grey"
+      class="sign-newletter-header text-center"
+    >
+      <nuxt-link to="#">
+        Sign Up for Newsletter
+        <v-icon
+          medium
+          color="pink darken-1"
+        >
+           mdi-email
+        </v-icon>
+      </nuxt-link>
+    </v-alert>
     <v-app-bar
       flat
-      fixed
       width="100%"
       id="app-bar"
     >
@@ -13,7 +29,9 @@
           src="~/assets/images/bk-beyong-logo.png"
         >
       </nuxt-link>
+    
     <v-spacer />
+
       <v-row
         align="center"
         justify="space-around"
@@ -29,7 +47,9 @@
           {{ item.title }}
         </v-btn>
       </v-row>
+
     <v-spacer />
+
       <v-icon class="pl-3">
         mdi-magnify
       </v-icon>
@@ -54,33 +74,67 @@
       :right="right"
       temporary
       fixed
+      width="70%"
+      class="app-bar-bg-color"
+      dark
     >
       <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
+        
+        <v-list-item>
+          <v-list-item-content>
+              <v-list-item-title class="text-center" />
+          </v-list-item-content>
         </v-list-item>
 
-        <v-list>
-            <v-list-item
-            v-for="(item, i) in mainMenu"
-            :key="i"
-            :to="item.to"
-            router
-            exact
-            >
-            <v-list-item-action>
-                <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-                <v-list-item-title v-text="item.title" />
-            </v-list-item-content>
-            </v-list-item>
-        </v-list>
+        <v-list-item
+          v-for="(item, i) in mainMenu"
+          :key="i"
+          :to="item.to"
+          router
+          exact
+        >
+        <v-list-item-content>
+            <v-list-item-title v-text="item.title" class="text-center" />
+        </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item class="mt-7"> 
+          <v-list-item-content>
+            <v-list-item-title>
+              <v-layout justify-center row class="m-icon-group text-center">
+                
+                  <a href="https://www.facebook.com/bangkokandbeyond" target="_blank" rel="nofollow">
+                     <v-icon
+                        medium
+                        color="blue"
+                        v-ripple
+                      >
+                        mdi-facebook
+                      </v-icon>
+                  </a>
+                  <a href="https://www.instagram.com/bkbeyond/" target="_blank" rel="nofollow">
+                    <v-icon
+                        medium
+                        color="pink lighten-1"
+                        v-ripple
+                      >
+                        mdi-instagram
+                      </v-icon>
+                  </a>
+                  <a href="https://twitter.com/bk_beyond" target="_blank" rel="nofollow">
+                    <v-icon
+                        medium
+                        color="blue lighten-2"
+                        v-ripple
+                      >
+                        mdi-twitter
+                      </v-icon>
+                  </a>
+             
+              </v-layout>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
 
       </v-list>
     </v-navigation-drawer>
@@ -89,8 +143,6 @@
 </template>
 
 <script>
-//import BkBeyondLogo from "~/assets/images/bk-beyong-logo.png"
-
 export default {
   scrollToTop: true,
   components: {
@@ -178,17 +230,18 @@ export default {
             if (checkDeveice == 'mobile') {
               document.getElementById('bkbeyond-logo').style.paddingTop = '2px'
               document.getElementById('bkbeyond-logo').style.width = '90px'
-              document.getElementById('app-bar').style.height = '50px'
+              document.getElementById('app-bar').style.height = '51px'
 
             } else {
               document.getElementById('bkbeyond-logo').style.paddingTop = '15px'
               document.getElementById('bkbeyond-logo').style.width = '115px'
               document.getElementById('app-bar').style.transition = '.2s'
               document.getElementById('app-bar').style.marginTop = '-5px'
-              document.getElementById('app-bar').style.height = '65px'
+              document.getElementById('app-bar').style.height = '60px'
+              document.getElementById('app-bar').style.position = 'fixed'
 
               document.getElementById('app-bar-tab').style.transition = '.2s'
-              document.getElementById('app-bar-tab').style.height = '65px'
+              document.getElementById('app-bar-tab').style.height = '60px'
             }
             
           } else {
@@ -198,13 +251,14 @@ export default {
             if (checkDeveice == 'mobile') {
               document.getElementById('bkbeyond-logo').style.paddingTop = '10px'
               document.getElementById('bkbeyond-logo').style.width = '105px'
-              document.getElementById('app-bar').style.height = '56px'
+              document.getElementById('app-bar').style.height = '51px'
 
             } else {
-              document.getElementById('bkbeyond-logo').style.paddingTop = '20px'
+              document.getElementById('bkbeyond-logo').style.paddingTop = '15px'
               document.getElementById('bkbeyond-logo').style.width = '140px'
               document.getElementById('app-bar').style.marginTop = '0px'
               document.getElementById('app-bar').style.height = '75px'
+              document.getElementById('app-bar').style.position = 'relative'
 
               document.getElementById('app-bar-tab').style.height = '75px'
             }
