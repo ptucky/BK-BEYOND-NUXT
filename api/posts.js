@@ -55,7 +55,7 @@ export async function getTags(tagName)
     return await api.posts.browse(
         {
             limit: "all",
-            filter: 'tag:cuisine'
+            filter: "tag:" + `${tagName}`
         }
     )
     .catch(err => {

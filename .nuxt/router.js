@@ -5,7 +5,12 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _b175d826 = () => interopDefault(import('../pages/about/index.vue' /* webpackChunkName: "pages/about/index" */))
 const _9eeb2900 = () => interopDefault(import('../pages/contact/index.vue' /* webpackChunkName: "pages/contact/index" */))
-const _1597ef12 = () => interopDefault(import('../pages/inspire.vue' /* webpackChunkName: "pages/inspire" */))
+const _e804843e = () => interopDefault(import('../pages/cuisine.vue' /* webpackChunkName: "pages/cuisine" */))
+const _709ed0de = () => interopDefault(import('../pages/hotel.vue' /* webpackChunkName: "pages/hotel" */))
+const _33c7ef12 = () => interopDefault(import('../pages/lifestyle.vue' /* webpackChunkName: "pages/lifestyle" */))
+const _993e57b4 = () => interopDefault(import('../pages/properties.vue' /* webpackChunkName: "pages/properties" */))
+const _5613575f = () => interopDefault(import('../pages/talk.vue' /* webpackChunkName: "pages/talk" */))
+const _2a9e0234 = () => interopDefault(import('../pages/what-happending.vue' /* webpackChunkName: "pages/what-happending" */))
 const _b34d80a2 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 const _cfbb08ac = () => interopDefault(import('../pages/_slug/index.vue' /* webpackChunkName: "pages/_slug/index" */))
 
@@ -34,9 +39,29 @@ export const routerOptions = {
     component: _9eeb2900,
     name: "contact"
   }, {
-    path: "/inspire",
-    component: _1597ef12,
-    name: "inspire"
+    path: "/cuisine",
+    component: _e804843e,
+    name: "cuisine"
+  }, {
+    path: "/hotel",
+    component: _709ed0de,
+    name: "hotel"
+  }, {
+    path: "/lifestyle",
+    component: _33c7ef12,
+    name: "lifestyle"
+  }, {
+    path: "/properties",
+    component: _993e57b4,
+    name: "properties"
+  }, {
+    path: "/talk",
+    component: _5613575f,
+    name: "talk"
+  }, {
+    path: "/what-happending",
+    component: _2a9e0234,
+    name: "what-happending"
   }, {
     path: "/",
     component: _b34d80a2,

@@ -92,7 +92,7 @@
       </v-icon>
     </v-app-bar>
 
-    <v-container fluid class="mt-10">
+    <v-container fluid class="mt-2">
       <v-main >
         <v-container>
           <nuxt />

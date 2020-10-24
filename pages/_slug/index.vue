@@ -1,7 +1,7 @@
 <template>
   <v-row class="row-cover-box" justify="center">
+    ++ _slug/index ++
     <PostDetailView v-if="post" :postData="post" />
-    <TagsListView v-if="tags" :tagDatas="tags" />
   </v-row>
 </template>
 
@@ -10,7 +10,6 @@ import { getPostDetail, getTags } from '~/api/posts';
 
 export default {
     components: {
-      TagsListView: () => import('~/components/Tags.vue'),
       PostDetailView: () => import('~/components/PostDetail.vue'),
     },
     data() {
@@ -19,7 +18,12 @@ export default {
         tags: []
       }
     },
-    async asyncData ({params}) {
+    async asyncData ({params}) {    
+      // call component for single post 
+      const post = await getPostDetail(params.slug)
+      return { post: post }
+      
+      /*
       if(params.slug === "what-happending" ||
         params.slug === "cuisine" || 
         params.slug === "hotel" ||
@@ -28,18 +32,19 @@ export default {
         params.slug === "properties"
       )
       {
+
         // call component for tag 
         const tags = await getTags(params.slug)
         return { tags: tags }
 
       } else {
 
-         // call component for single post 
+        // call component for single post 
         const post = await getPostDetail(params.slug)
         return { post: post }
 
       }
-      
+      */
     },
     methods: {
 

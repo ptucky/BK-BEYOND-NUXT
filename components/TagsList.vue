@@ -13,16 +13,26 @@
 
 <script>
 /* eslint-disable */
+import { getTags } from '~/api/posts';
+
 export default {
-    name: "TagsListView",
-    props: ["tagDatas"],
+    name: "TagsList",
+    props: ["pageName"],
     data() {
-        return {
-            tags: this.tagDatas
+         return {
+            pageTitle: this.pageName,
+            tags: [],
         }
     },
     mounted() {
-      //console.log("AAA")
+        this.asyncData(this.pageName)
+        //console.log(this.$route.fullPath);
+    },
+    methods: {
+        async asyncData (pageName) {
+          const tag = await getTags(pageName)
+          this.tags = tag
+        },
     }
 }
 </script>

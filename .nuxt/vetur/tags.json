@@ -1,20 +1,14 @@
 {
-  "Logo": {
-    "description": "Auto imported from components/Logo.vue"
-  },
-  "LazyLogo": {
-    "description": "Auto imported from components/Logo.vue"
-  },
   "PostDetail": {
     "description": "Auto imported from components/PostDetail.vue"
   },
   "LazyPostDetail": {
     "description": "Auto imported from components/PostDetail.vue"
   },
-  "Tags": {
-    "description": "Auto imported from components/Tags.vue"
+  "TagsList": {
+    "description": "Auto imported from components/TagsList.vue"
   },
-  "LazyTags": {
-    "description": "Auto imported from components/Tags.vue"
+  "LazyTagsList": {
+    "description": "Auto imported from components/TagsList.vue"
   }
 }
