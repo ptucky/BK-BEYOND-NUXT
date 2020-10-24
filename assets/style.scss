@@ -12,7 +12,6 @@ $app-bar-bg-color: #4F4D5F !important; /* #4F4D5F */ /* #e2e4eb*/
 }
 .theme--light.v-btn{ color: $app-bar-bg-color; }
 .theme--light.v-btn:hover{ color: #FFF !important; background: $app-bar-bg-color;}
-
 .sign-newletter-header{
     margin-bottom: 5px !important;
     a{ text-decoration: none; font-weight: 400; font-size: 0.85rem; color: #D81B60 !important; }
@@ -26,28 +25,7 @@ $app-bar-bg-color: #4F4D5F !important; /* #4F4D5F */ /* #e2e4eb*/
     }
 }
 .sign-newletter-header.v-alert--dense{padding-bottom: 12px !important;}
-@media only screen and (max-width: 600px) {
-    #bkbeyond-logo{width:105px; padding-top:15px;}
-    .expanded input {
-        border: 0;
-        width: 140px;
-    }
-    input.showSearch {
-        width: 140px;
-    }
-}
-
-@media only screen and (min-width: 601px) {
-    #bkbeyond-logo{width:140px; padding-top:15px;}
-    .expanded input {
-        border: 0;
-        width: 180px;
-    }
-    input.showSearch {
-        width: 180px;
-    }
-}
-
+.text-container{ font-size: 0.95rem; }
 /* SEARCH */
 .ui-widget {
     display: inline-block;
@@ -99,3 +77,14 @@ input.hideSearch:focus {
 }
 /* END SEARCH */
 
+@media only screen and (max-width: 800px) {
+    #app-bar{ height: 55px !important; }
+    #bkbeyond-logo{width:105px; padding-top:15px;}
+    .expanded input {border: 0;width: 140px;}
+    input.showSearch { width: 140px;}
+}
+@media only screen and (min-width: 801px) {
+    #bkbeyond-logo{width:140px; padding-top:15px;}
+    .expanded input { border: 0; width: 180px;}
+    input.showSearch { width: 180px;}
+}

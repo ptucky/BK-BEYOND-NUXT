@@ -92,9 +92,9 @@
       </v-icon>
     </v-app-bar>
 
-    <v-container fluid class="mt-2">
-      <v-main >
-        <v-container>
+    <v-container fluid>
+      <v-main>
+        <v-container class="grey--text text--darken-2 text-container">
           <nuxt />
         </v-container>
       </v-main>
@@ -237,13 +237,13 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.$nuxt.$loading.start()
-      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+      setTimeout(() => this.$nuxt.$loading.finish(), 300)
     })
 
     document.querySelector('.theme--light.v-app-bar.v-toolbar.v-sheet').style.background = 'transparent'
     let checkDeveice = ''
-    if (this.$device.isMobile) {
-      checkDeveice = 'mobile'
+    if (this.$device.isMobile || this.$device.isTablet) {
+      checkDeveice = 'mobile_tablet'
     }
 
     this.handleScrollTopbar(checkDeveice)
@@ -292,10 +292,10 @@ export default {
             document.querySelector('.theme--light.v-app-bar.v-toolbar.v-sheet').style.background = '#e2e4eb'
             document.getElementById('app-bar').style.position = 'fixed'
 
-            if (checkDeveice == 'mobile') {
+            if (checkDeveice == 'mobile_tablet') {
               document.getElementById('bkbeyond-logo').style.paddingTop = '5px'
               document.getElementById('bkbeyond-logo').style.width = '100px'
-              document.getElementById('app-bar').style.height = '52px'
+              document.getElementById('app-bar').style.height = '55px'
             } else {
               document.getElementById('bkbeyond-logo').style.paddingTop = '10px'
               document.getElementById('bkbeyond-logo').style.width = '110px'
@@ -312,10 +312,10 @@ export default {
             document.querySelector('.theme--light.v-app-bar.v-toolbar.v-sheet').style.background = 'transparent'
             document.getElementById('app-bar').style.position = 'relative'
 
-            if (checkDeveice == 'mobile') {
+            if (checkDeveice == 'mobile_tablet') {
               document.getElementById('bkbeyond-logo').style.paddingTop = '15px'
               document.getElementById('bkbeyond-logo').style.width = '105px'
-              document.getElementById('app-bar').style.height = '52px'
+              document.getElementById('app-bar').style.height = '55px'
             } else {
               document.getElementById('bkbeyond-logo').style.paddingTop = '15px'
               document.getElementById('bkbeyond-logo').style.width = '140px'

@@ -1,11 +1,8 @@
 <template>
-  <v-row class="row-cover-box" justify="center">
-    <TagsList :pageName="pageName" />
-  </v-row>
+  <TagsList :pageName="pageName" />
 </template>
 
 <script>
-
 export default {
     components: {
       TagsList: () => import('~/components/TagsList.vue'),
