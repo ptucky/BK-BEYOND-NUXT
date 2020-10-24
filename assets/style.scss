@@ -28,8 +28,75 @@ $app-bar-bg-color: #4F4D5F !important; /* #4F4D5F */ /* #e2e4eb*/
 .sign-newletter-header.v-alert--dense{padding-bottom: 12px !important;}
 @media only screen and (max-width: 600px) {
     #bkbeyond-logo{width:105px; padding-top:15px;}
+    .expanded input {
+        border: 0;
+        width: 140px;
+    }
+    input.showSearch {
+        width: 140px;
+    }
 }
 
 @media only screen and (min-width: 601px) {
     #bkbeyond-logo{width:140px; padding-top:15px;}
+    .expanded input {
+        border: 0;
+        width: 200px;
+    }
+    input.showSearch {
+        width: 220px;
+    }
 }
+
+
+/* SEARCH */
+.ui-widget {
+    display: inline-block;
+    height: 47px;
+}
+input.showSearch {
+    height: 35px;
+    padding: 8px;
+    margin-top: 3px;
+    background-color: $app-bar-bg-color;
+    color: #fff;
+    transition: all 400ms ease-in;
+    -webkit-transition: all 100ms ease-in;
+    border-radius: 6px;
+}
+input.hideSearch {
+    width: 0;
+    height: 40px;
+    padding: 0px;
+    background-color: $app-bar-bg-color;
+    color: #fff;
+    transition: all 100ms ease-in;
+    -webkit-transition: all 100ms ease-in;
+}
+button.showSearch {display: block !important;}
+button.hideSearch { display: none !important; }
+.search-btn {
+    margin-top: 10px;
+    padding-left: 10px;
+    cursor: poiter;
+}
+input.showSearch:focus,
+input.hideSearch:focus {
+    outline: none !important;
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px $app-bar-bg-color;
+}
+::placeholder {
+    /* Firefox, Chrome, Opera */
+    color: #fff;
+}
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #fff;
+}
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #fff;
+}
+/* END SEARCH */
+
