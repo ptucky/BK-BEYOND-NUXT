@@ -110,7 +110,6 @@
       dark
     >
       <v-list>
-        
         <v-list-item>
           <v-list-item-content>
               <v-list-item-title class="text-center" />
@@ -164,7 +163,6 @@
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-
       </v-list>
     </v-navigation-drawer>
 

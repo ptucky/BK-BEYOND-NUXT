@@ -15,6 +15,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 import nuxt_plugin_plugin_b3c48d0e from 'nuxt_plugin_plugin_b3c48d0e' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_plugin_68a3a515 from 'nuxt_plugin_plugin_68a3a515' // Source: ./vuetify/plugin.js (mode: 'all')
 import nuxt_plugin_libplugince48e68e_4570184f from 'nuxt_plugin_libplugince48e68e_4570184f' // Source: ./lib.plugin.ce48e68e.js (mode: 'all')
+import nuxt_plugin_nuxtswiperplugin_622602ba from 'nuxt_plugin_nuxtswiperplugin_622602ba' // Source: ../plugins/nuxt-swiper-plugin.js (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -60,7 +61,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"titleTemplate":"%s - BK-BEYOND","title":"BK-BEYOND | Online News and Events","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"},{"hid":"description","name":"description","content":""},{"name":"theme-color","content":"#e2e4eb"},{"hid":"keywords","name":"keywords","content":"Bangkok news, evetns, tourist place, restaurant, life style in Bangkok"},{"hid":"description","name":"description","content":"Updated Bangkok news, evetns, tourist place, restaurant and life style"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
+    head: {"titleTemplate":"%s - BK-BEYOND","title":"BK-BEYOND | Online News and Events","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"},{"hid":"description","name":"description","content":""},{"name":"theme-color","content":"#e2e4eb"},{"name":"apple-mobile-web-app-status-bar-style","content":"#e2e4eb"},{"name":"apple-mobile-web-app-capable","content":"yes"},{"hid":"keywords","name":"keywords","content":"bk-beyond, Bangkok news, evetns, tourist place, restaurant, life style in Bangkok"},{"hid":"description","name":"description","content":"Updated Bangkok news, evetns, tourist place, restaurant and life style"},{"hid":"og:title","property":"og:title","content":"Bangkok news, evetns, tourist place, restaurant, life style in Bangkok - BK-BEYOND"},{"hid":"og:image","property":"og:image","content":"https:\u002F\u002Fwww.bk-beyond.com\u002Fscreen-web.png"},{"hid":"og:description","property":"og:description","content":"Updated Bangkok news, evetns, tourist place, restaurant and life style"},{"hid":"og:url","property":"og:url","content":"https:\u002F\u002Fwww.bk-beyond.com"},{"hid":"og:site_name","property":"og:site_name","content":"bk-beyond"},{"hid":"og:type","property":"og:type","content":"article"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
 
     router,
     nuxt: {
@@ -184,6 +185,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_libplugince48e68e_4570184f === 'function') {
     await nuxt_plugin_libplugince48e68e_4570184f(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_nuxtswiperplugin_622602ba === 'function') {
+    await nuxt_plugin_nuxtswiperplugin_622602ba(app.context, inject)
   }
 
   // Lock enablePreview in context

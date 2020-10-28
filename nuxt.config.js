@@ -10,16 +10,36 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' },
       { hid: 'description', name: 'description', content: '' },
       { name: "theme-color", content: "#e2e4eb" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "#e2e4eb" }, // IOS
+      { name: "apple-mobile-web-app-capable", content: "yes" },
       {
         hid: "keywords",
         name: "keywords",
-        content: "Bangkok news, evetns, tourist place, restaurant, life style in Bangkok"
+        content: "bk-beyond, Bangkok news, evetns, tourist place, restaurant, life style in Bangkok"
       },
       {
         hid: "description",
         name: "description",
         content: "Updated Bangkok news, evetns, tourist place, restaurant and life style"
       },
+      {
+        hid: "og:title",
+        property: "og:title",
+        content: "Bangkok news, evetns, tourist place, restaurant, life style in Bangkok - BK-BEYOND"
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "https://www.bk-beyond.com/screen-web.png"
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content: "Updated Bangkok news, evetns, tourist place, restaurant and life style"
+      },
+      { hid: "og:url", property: "og:url", content: "https://www.bk-beyond.com" },
+      { hid: "og:site_name", property: "og:site_name", content: "bk-beyond" },
+      { hid: "og:type", property: "og:type", content: "article" }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -48,6 +68,7 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     "~/assets/style.scss",
+    "swiper/swiper.scss"
   ],
 
   render: {
@@ -60,6 +81,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    { src: "~/plugins/nuxt-swiper-plugin.js", ssr: false, mode: 'client'},
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

@@ -7,6 +7,8 @@ import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '../assets/style.scss'
 
+import '../node_modules/swiper/swiper.scss'
+
 import '../node_modules/vuetify/dist/vuetify.css'
 
 import _6f6c098b from '../layouts/default.vue'
