@@ -184,7 +184,7 @@ export default {
         {
           icon: 'mdi-apps',
           title: "What's happening",
-          to: '/what-happending'
+          to: '/what-happend'
         },
         {
           icon: 'mdi-chart-bubble',

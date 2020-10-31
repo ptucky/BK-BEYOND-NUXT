@@ -10,5 +10,11 @@
   },
   "LazyTagsList": {
     "description": "Auto imported from components/TagsList.vue"
+  },
+  "WhatHappend": {
+    "description": "Auto imported from components/Home/WhatHappend.vue"
+  },
+  "LazyWhatHappend": {
+    "description": "Auto imported from components/Home/WhatHappend.vue"
   }
 }

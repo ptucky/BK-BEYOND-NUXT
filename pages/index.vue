@@ -31,11 +31,14 @@
       <div class="swiper-button-next" slot="button-next"></div>
     </div>
     
-    <v-container class="grey--text text--darken-2 text-container">
+    <WhatHappend />
+
+    <!-- <v-container class="grey--text text--darken-2 text-container">
       <v-row>
         <v-col cols="12" sm="12" md="12" class="text-center">
           <h2>What’s happening</h2>
         </v-col>
+ 
         <v-col cols="12" sm="12" md="4" v-for="(post, index) in posts" :key="index">
           <div class="text-left">
             <img :src="post.feature_image" class="img-post">
@@ -49,7 +52,7 @@
           </div>
         </v-col>
       </v-row>
-    </v-container>
+    </v-container> -->
 
   </v-row>
 </template>
@@ -59,7 +62,9 @@ import { getPosts } from '~/api/posts';
 import { getTags } from '~/api/posts';
 
 export default {
-  components: {},
+  components: {
+    WhatHappend: () => import('~/components/Home/WhatHappend.vue'),
+  },
   data () {
     return {
       swiperOption: {
@@ -96,12 +101,6 @@ export default {
     //   const posts = await getPosts();
     //   return { posts: posts }
     // },
-    beautyFullDate(val) {
-      let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-      let date = new Date(val);
-      let fullDate = monthNames[(date.getMonth()+1)] + " " + date.getDate().toString() + ", " + date.getFullYear().toString()
-      return fullDate
-    },
     onSwiperRedied(swiper) {
       console.log('Swiper redied!', swiper)
     },

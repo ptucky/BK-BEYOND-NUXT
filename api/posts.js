@@ -51,11 +51,12 @@ export async function getPage(pageSlug)
 
 
 /** */
-export async function getTags(tagName) 
+export async function getTags(tagName, limit) 
 {
+    let limitPage = (limit && limit > 1)? limit : "all"
     return await api.posts.browse(
         {
-            limit: "all",
+            limit: limitPage,
             filter: "tag:" + `${tagName}`
         }
     )
@@ -63,4 +64,5 @@ export async function getTags(tagName)
         console.error(err);
     });
 }
+
 

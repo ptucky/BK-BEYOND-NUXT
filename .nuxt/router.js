@@ -10,7 +10,7 @@ const _709ed0de = () => interopDefault(import('../pages/hotel.vue' /* webpackChu
 const _33c7ef12 = () => interopDefault(import('../pages/lifestyle.vue' /* webpackChunkName: "pages/lifestyle" */))
 const _993e57b4 = () => interopDefault(import('../pages/properties.vue' /* webpackChunkName: "pages/properties" */))
 const _5613575f = () => interopDefault(import('../pages/talk.vue' /* webpackChunkName: "pages/talk" */))
-const _2a9e0234 = () => interopDefault(import('../pages/what-happending.vue' /* webpackChunkName: "pages/what-happending" */))
+const _5cbdd6a8 = () => interopDefault(import('../pages/what-happend.vue' /* webpackChunkName: "pages/what-happend" */))
 const _b34d80a2 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 const _cfbb08ac = () => interopDefault(import('../pages/_slug/index.vue' /* webpackChunkName: "pages/_slug/index" */))
 
@@ -59,9 +59,9 @@ export const routerOptions = {
     component: _5613575f,
     name: "talk"
   }, {
-    path: "/what-happending",
-    component: _2a9e0234,
-    name: "what-happending"
+    path: "/what-happend",
+    component: _5cbdd6a8,
+    name: "what-happend"
   }, {
     path: "/",
     component: _b34d80a2,
