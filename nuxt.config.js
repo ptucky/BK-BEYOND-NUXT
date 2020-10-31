@@ -68,7 +68,7 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     "~/assets/style.scss",
-    "swiper/swiper.scss"
+    'swiper/css/swiper.css' //(>= Swiper5)
   ],
 
   render: {

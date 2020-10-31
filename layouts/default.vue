@@ -93,10 +93,8 @@
     </v-app-bar>
 
     <v-container fluid>
-      <v-main>
-        <v-container class="grey--text text--darken-2 text-container">
-          <nuxt />
-        </v-container>
+      <v-main class="grey--text text--darken-2 text-container">
+        <nuxt />
       </v-main>
     </v-container>
   

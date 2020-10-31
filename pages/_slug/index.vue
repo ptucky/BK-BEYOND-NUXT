@@ -1,8 +1,10 @@
 <template>
-  <v-row class="row-cover-box" justify="center">
-    ++ _slug/index ++
-    <PostDetailView v-if="post" :postData="post" />
-  </v-row>
+  <v-container class="grey--text text--darken-2 text-container">
+    <v-row class="row-cover-box" justify="center">
+      ++ _slug/index ++
+      <PostDetailView v-if="post" :postData="post" />
+    </v-row>
+  </v-container>
 </template>
 
 <script>

@@ -1,48 +1,42 @@
 <template>
   <v-row class="row-cover-box" justify="center">
-    <v-col cols="12" sm="12" md="12" class="text-center">
-      <h2>Latest</h2>
-    </v-col>
-    <v-col cols="12" sm="12" md="4" v-for="(post, index) in posts" :key="index">
-      <div class="text-left">
-        <img :src="post.feature_image" class="img-post">
-        <nuxt-link :to="{ path: post.slug }">
-          {{ post.title }}
-        </nuxt-link>
-        <v-spacer>
-          <small class="blue-grey--text text--lighten-2">{{ beautyFullDate(post.updated_at) }}</small>
-        </v-spacer>
-        <p v-text="post.excerpt"></p>
-      </div>
-    </v-col>
-
-    
-      <!-- <swiper
-        ref="carousel"
-        class="swiper"
-        :options="swiperOptions"
-        @ready="onSwiperRedied"
-        @clickSlide="onSwiperClickSlide"
-        @slideChangeTransitionStart="onSwiperSlideChangeTransitionStart"
-      >
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
-        <swiper-slide>Slide 4</swiper-slide>
-        <swiper-slide>Slide 5</swiper-slide>
-        <swiper-slide>Slide 6</swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </swiper> -->
-
-
-    <div v-swiper="swiperOptions">
+  
+    <div
+      class="swiper home-slide-image"
+      v-swiper:myDirectiveSwiper="swiperOption"
+      @ready="onSwiperRedied"
+      @click-slide="onSwiperClickSlide"
+      @slide-change-transition-start="onSwiperSlideChangeTransitionStart"
+    >
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          Render original HTML in server, render Swiper in browser (client)
+        <div class="swiper-slide" v-for="index in 6" :key="index">
+          <span class="text-slide">ASTRONOMERS ANNOUNCE DISCOVERING TEN TINY JOVIAN SATELLITES</span>
         </div>
       </div>
+      <div class="swiper-pagination" slot="pagination"></div>
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
     </div>
-
+    
+    <v-container class="grey--text text--darken-2 text-container">
+      <v-row>
+        <v-col cols="12" sm="12" md="12" class="text-center">
+          <h2>Latest</h2>
+        </v-col>
+        <v-col cols="12" sm="12" md="4" v-for="(post, index) in posts" :key="index">
+          <div class="text-left">
+            <img :src="post.feature_image" class="img-post">
+            <nuxt-link :to="{ path: post.slug }">
+              {{ post.title }}
+            </nuxt-link>
+            <v-spacer>
+              <small class="blue-grey--text text--lighten-2">{{ beautyFullDate(post.updated_at) }}</small>
+            </v-spacer>
+            <p v-text="post.excerpt"></p>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
 
   </v-row>
 </template>
@@ -55,29 +49,19 @@ export default {
   data () {
     return {
       swiperOption: {
-        speed: 600,
-        parallax: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
         pagination: {
           el: '.swiper-pagination',
-          clickable: true
+          clickable: true,
+          dynamicBullets: true
         },
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
         }
-      },
-
-      swiperOptions: {
-        loop: true,
-        slidesPerView: 'auto',
-        centeredSlides: true,
-        spaceBetween: 30,
-        pagination: {
-          el: '.swiper-pagination',
-          dynamicBullets: true
-        }
-      }
-
+      },      
     }
   },
   async asyncData () {
@@ -99,7 +83,7 @@ export default {
     },
     onSwiperClickSlide(index, reallyIndex) {
       console.log('Swiper click slide!', reallyIndex)
-    }
+    },
   }
 }
 </script>
@@ -107,16 +91,19 @@ export default {
 <style lang="scss" scoped>
 .img-post{ width: 100%; }
 
-
-
+.home-slide-image{ 
+  margin-top: -10px;
+  .text-slide { font-weight: 300; } 
+}
 .swiper {
-  height: 300px;
+  height: 530px;
   width: 100%;
+  z-index: 0;
   .swiper-slide {
     text-align: center;
     font-size: 38px;
     font-weight: 700;
-    background-color: #eee;
+    background-color: #f30;
     display: flex;
     justify-content: center;
     align-items: center;

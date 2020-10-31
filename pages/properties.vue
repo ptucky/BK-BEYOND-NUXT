@@ -1,5 +1,7 @@
 <template>
-  <TagsList :pageName="pageName" />
+  <v-container class="grey--text text--darken-2 text-container">  
+    <TagsList :pageName="pageName" />
+  </v-container>
 </template>
 
 <script>
