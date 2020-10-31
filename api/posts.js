@@ -15,10 +15,11 @@ const api = new GhostContentAPI(
 )
 
 /** Get Post */
-export async function getPosts() 
+export async function getPosts(limit) 
 {
+    let limitPage = (limit && limit > 1)? limit : "all" 
     return await api.posts.browse({
-        limit: "all",
+        limit: limitPage,
         include: "tags,authors"
     })
     .catch(err => {

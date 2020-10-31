@@ -9,8 +9,21 @@
       @slide-change-transition-start="onSwiperSlideChangeTransitionStart"
     >
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="index in 6" :key="index">
-          <span class="text-slide">ASTRONOMERS ANNOUNCE DISCOVERING TEN TINY JOVIAN SATELLITES</span>
+        <div class="swiper-slide" v-for="(latest, i) in latestPosts" :key="i">
+          <div class="swiper-slide-img" :style="{ 'width': '100%', 'background-image' : `url(${latest.feature_image})` }">
+            <v-chip
+              color="red"
+              text-color="white"
+              label
+              small
+            >
+              <v-icon left>
+                mdi-fire
+              </v-icon>
+              new
+            </v-chip>
+            <h1 class="text-slide" v-text="latest.title"></h1>
+          </div>
         </div>
       </div>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -21,7 +34,7 @@
     <v-container class="grey--text text--darken-2 text-container">
       <v-row>
         <v-col cols="12" sm="12" md="12" class="text-center">
-          <h2>Latest</h2>
+          <h2>What’s happening</h2>
         </v-col>
         <v-col cols="12" sm="12" md="4" v-for="(post, index) in posts" :key="index">
           <div class="text-left">
@@ -43,6 +56,7 @@
 
 <script>
 import { getPosts } from '~/api/posts';
+import { getTags } from '~/api/posts';
 
 export default {
   components: {},
@@ -64,11 +78,24 @@ export default {
       },      
     }
   },
+  // mounted() {
+  //   this.latestPost()
+  
+  // },
   async asyncData () {
+    const latestPosts = await getPosts(6);
     const posts = await getPosts();
-    return { posts: posts }
+
+    return { 
+            posts: posts, 
+            latestPosts: latestPosts 
+          }
   },
   methods: {
+    // latestPost(){
+    //   const posts = await getPosts();
+    //   return { posts: posts }
+    // },
     beautyFullDate(val) {
       let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
       let date = new Date(val);
@@ -91,19 +118,38 @@ export default {
 <style lang="scss" scoped>
 .img-post{ width: 100%; }
 
-.home-slide-image{ 
-  margin-top: -10px;
-  .text-slide { font-weight: 300; } 
+@media only screen and (max-width: 800px) {
+  .swiper, .swiper-slide-img {
+    height: 400px;
+  }
+  .home-slide-image{ 
+    margin-top: 0px;
+    .text-slide { font-size: 1.2rem; font-weight: 300; } 
+  }
 }
+
+@media only screen and (min-width: 801px) {
+  .swiper, .swiper-slide-img {
+    height: 580px;
+  }
+  .home-slide-image{ 
+    margin-top: -10px;
+    .text-slide { font-size: 2rem; font-weight: 300; } 
+  }
+}
+.swiper-slide-img {
+  background-repeat: no-repeat!important;
+  background-size: cover!important;
+}
+.chip-bg{ background-color: #aa6a6a; }
 .swiper {
-  height: 530px;
   width: 100%;
   z-index: 0;
   .swiper-slide {
     text-align: center;
     font-size: 38px;
     font-weight: 700;
-    background-color: #f30;
+    // background-color: yellow;
     display: flex;
     justify-content: center;
     align-items: center;

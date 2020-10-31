@@ -3,60 +3,70 @@
     "name": "about",
     "path": "/about",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/about/index.vue",
-    "chunkName": "pages/about/index"
+    "chunkName": "pages/about/index",
+    "_name": "_b175d826"
   },
   {
     "name": "contact",
     "path": "/contact",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/contact/index.vue",
-    "chunkName": "pages/contact/index"
+    "chunkName": "pages/contact/index",
+    "_name": "_9eeb2900"
   },
   {
     "name": "cuisine",
     "path": "/cuisine",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/cuisine.vue",
-    "chunkName": "pages/cuisine"
+    "chunkName": "pages/cuisine",
+    "_name": "_e804843e"
   },
   {
     "name": "hotel",
     "path": "/hotel",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/hotel.vue",
-    "chunkName": "pages/hotel"
+    "chunkName": "pages/hotel",
+    "_name": "_709ed0de"
   },
   {
     "name": "lifestyle",
     "path": "/lifestyle",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle.vue",
-    "chunkName": "pages/lifestyle"
+    "chunkName": "pages/lifestyle",
+    "_name": "_33c7ef12"
   },
   {
     "name": "properties",
     "path": "/properties",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/properties.vue",
-    "chunkName": "pages/properties"
+    "chunkName": "pages/properties",
+    "_name": "_993e57b4"
   },
   {
     "name": "talk",
     "path": "/talk",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/talk.vue",
-    "chunkName": "pages/talk"
+    "chunkName": "pages/talk",
+    "_name": "_5613575f"
   },
   {
     "name": "what-happending",
     "path": "/what-happending",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/what-happending.vue",
-    "chunkName": "pages/what-happending"
+    "chunkName": "pages/what-happending",
+    "_name": "_2a9e0234"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_b34d80a2"
   },
   {
     "name": "slug",
     "path": "/:slug",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/_slug/index.vue",
-    "chunkName": "pages/_slug/index"
+    "chunkName": "pages/_slug/index",
+    "_name": "_cfbb08ac"
   }
 ]
