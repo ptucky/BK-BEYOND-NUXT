@@ -292,9 +292,11 @@ export default {
               document.getElementById('bkbeyond-logo').style.paddingTop = '5px'
               document.getElementById('bkbeyond-logo').style.width = '100px'
               document.getElementById('app-bar').style.height = '55px'
+              
+              document.querySelector('.v-toolbar__content').style.height = '50px !important'
             } else {
               document.getElementById('bkbeyond-logo').style.paddingTop = '10px'
-              document.getElementById('bkbeyond-logo').style.width = '110px'
+              document.getElementById('bkbeyond-logo').style.width = '105px'
               document.getElementById('app-bar').style.transition = '.2s'
               document.getElementById('app-bar').style.marginTop = '-5px'
               document.getElementById('app-bar').style.height = '60px'
@@ -309,16 +311,16 @@ export default {
             document.getElementById('app-bar').style.position = 'relative'
 
             if (checkDeveice == 'mobile_tablet') {
-              document.getElementById('bkbeyond-logo').style.paddingTop = '15px'
+              document.getElementById('bkbeyond-logo').style.paddingTop = '10px'
               document.getElementById('bkbeyond-logo').style.width = '105px'
               document.getElementById('app-bar').style.height = '55px'
             } else {
               document.getElementById('bkbeyond-logo').style.paddingTop = '15px'
-              document.getElementById('bkbeyond-logo').style.width = '140px'
+              document.getElementById('bkbeyond-logo').style.width = '130px'
               document.getElementById('app-bar').style.marginTop = '0px'
-              document.getElementById('app-bar').style.height = '75px'
+              document.getElementById('app-bar').style.height = '65px'
 
-              document.getElementById('app-bar-tab').style.height = '75px'
+              document.getElementById('app-bar-tab').style.height = '65px'
             }
             
           }

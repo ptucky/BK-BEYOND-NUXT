@@ -22,7 +22,7 @@
               </v-icon>
               new
             </v-chip>
-            <h1 class="text-slide" v-text="latest.title"></h1>
+            <h1 class="text-slide white--text" v-text="latest.title"></h1>
           </div>
         </div>
       </div>
@@ -33,33 +33,13 @@
     
     <WhatHappend />
 
-    <!-- <v-container class="grey--text text--darken-2 text-container">
-      <v-row>
-        <v-col cols="12" sm="12" md="12" class="text-center">
-          <h2>What’s happening</h2>
-        </v-col>
- 
-        <v-col cols="12" sm="12" md="4" v-for="(post, index) in posts" :key="index">
-          <div class="text-left">
-            <img :src="post.feature_image" class="img-post">
-            <nuxt-link :to="{ path: post.slug }">
-              {{ post.title }}
-            </nuxt-link>
-            <v-spacer>
-              <small class="blue-grey--text text--lighten-2">{{ beautyFullDate(post.updated_at) }}</small>
-            </v-spacer>
-            <p v-text="post.excerpt"></p>
-          </div>
-        </v-col>
-      </v-row>
-    </v-container> -->
+    
 
   </v-row>
 </template>
 
 <script>
 import { getPosts } from '~/api/posts';
-import { getTags } from '~/api/posts';
 
 export default {
   components: {
@@ -68,6 +48,10 @@ export default {
   data () {
     return {
       swiperOption: {
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false
+        },
         slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
@@ -89,18 +73,11 @@ export default {
   // },
   async asyncData () {
     const latestPosts = await getPosts(6);
-    const posts = await getPosts();
-
     return { 
-            posts: posts, 
-            latestPosts: latestPosts 
-          }
+      latestPosts: latestPosts 
+    }
   },
   methods: {
-    // latestPost(){
-    //   const posts = await getPosts();
-    //   return { posts: posts }
-    // },
     onSwiperRedied(swiper) {
       console.log('Swiper redied!', swiper)
     },
@@ -115,11 +92,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.img-post{ width: 100%; }
 
 @media only screen and (max-width: 800px) {
   .swiper, .swiper-slide-img {
-    height: 400px;
+    height: 350px;
   }
   .home-slide-image{ 
     margin-top: 0px;
@@ -129,16 +105,18 @@ export default {
 
 @media only screen and (min-width: 801px) {
   .swiper, .swiper-slide-img {
-    height: 580px;
+    height: 82vh;
   }
   .home-slide-image{ 
-    margin-top: -10px;
+    margin-top: 0px;
     .text-slide { font-size: 2rem; font-weight: 300; } 
   }
 }
+.img-post{ width: 100%; }
 .swiper-slide-img {
   background-repeat: no-repeat!important;
   background-size: cover!important;
+  background-position: 50%!important;
 }
 .chip-bg{ background-color: #aa6a6a; }
 .swiper {
@@ -159,6 +137,4 @@ export default {
     }
   }
 }
-
 </style>
- 
