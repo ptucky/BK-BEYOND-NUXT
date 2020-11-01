@@ -23,6 +23,12 @@
   "LazyLifeStyle": {
     "description": "Auto imported from components/Home/LifeStyle.vue"
   },
+  "Talk": {
+    "description": "Auto imported from components/Home/Talk.vue"
+  },
+  "LazyTalk": {
+    "description": "Auto imported from components/Home/Talk.vue"
+  },
   "WhatHappend": {
     "description": "Auto imported from components/Home/WhatHappend.vue"
   },

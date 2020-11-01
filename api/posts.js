@@ -57,7 +57,7 @@ export async function getTags(tagName, limit)
     return await api.posts.browse(
         {
             limit: limitPage,
-            include: "tags,authors",
+            //include: "tags,authors",
             filter: "tag:" + `${tagName}`
             
         }

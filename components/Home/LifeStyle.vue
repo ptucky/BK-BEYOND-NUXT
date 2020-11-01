@@ -2,18 +2,20 @@
   <v-container class="grey--text text--darken-2 text-container">
     <v-row>
       <v-col cols="12" sm="12" md="12" class="text-center">
-        <h2>Life Style</h2>
+        <h2 v-text="pageTitle"></h2>
       </v-col>
       <v-col cols="12" sm="12" md="4" v-for="(post, index) in tags" :key="index">
         <div class="text-left">
-          <img :src="post.feature_image" class="img-post">
-          <nuxt-link :to="{ path: post.slug }">
-            {{ post.title }}
-          </nuxt-link>
+          <h3 class="home-head-title">
+            <nuxt-link :to="{ path: post.slug }">
+              <img :src="post.feature_image" class="img-post">
+              {{ post.title }}
+            </nuxt-link>
+          </h3>
           <p v-if="post.excerpt" v-text="post.excerpt"></p>
-            <v-spacer>
+          <v-spacer>
             <!-- <small class="blue-grey--text text--lighten-2">{{ beautyFullDate(post.updated_at) }}</small> -->
-            <small class="blue-grey--text text--lighten-2" v-text="`by ${post.authors[0].name}`"></small>
+            <!-- <small class="blue-grey--text text--lighten-2" v-text="`by ${post.authors[0].name}`"></small> -->
           </v-spacer>
         </div>
       </v-col>
@@ -29,10 +31,10 @@ export default {
     name: "LifeStyle",
     data() {
         return {
-            limitQuery: 3,
-            tagName: 'lifestyle',
-            pageTitle: this.pageName,
-            tags: [],
+          limitQuery: 3,
+          tagName: 'lifestyle',
+          pageTitle: 'Life Style',
+          tags: [],
         }
     },
     mounted() {
@@ -47,7 +49,6 @@ export default {
         },
         async asyncData (key, limit) {
             const tag = await getTags(key, limit)
-            console.log(tag)
             this.tags = tag
         },
     }

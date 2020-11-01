@@ -10,26 +10,32 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(latest, i) in latestPosts" :key="i">
           <div class="swiper-slide-img" :style="{ 'opacity': '0.9','width': '100%', 'background-image' : `url(${latest.feature_image})` }">
-            <v-chip
-              color="red"
-              text-color="white"
-              label
-              small
-            >
-              {{ latest.primary_tag.name }}
-            </v-chip>
-            <h1 class="text-slide white--text" v-text="latest.title"></h1>
+            <div class="text-slide white--text" v-if="latest.title">
+              <nuxt-link :to="{ path: latest.slug }">
+                <v-chip
+                  color="red"
+                  text-color="white"
+                  label
+                  small
+                  style="margin-top: -3px;"
+                >
+                  {{ latest.primary_tag.name }}
+                </v-chip>
+                {{ latest.title }}
+              </nuxt-link>
+            </div>
           </div>
         </div>
       </div>
       <div class="swiper-pagination" slot="pagination"></div>
-      <!-- <div class="swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button-next" slot="button-next"></div> -->
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
     </div>
     
     <WhatHappend />
     <BannerOne />
     <LifeStyle />
+    <Talk />
 
   </v-row>
 </template>
@@ -42,13 +48,14 @@ export default {
     WhatHappend: () => import('~/components/Home/WhatHappend.vue'),
     BannerOne: () => import('~/components/Home/BannerOne.vue'),
     LifeStyle: () => import('~/components/Home/LifeStyle.vue'),
+    Talk: () => import('~/components/Home/Talk.vue'),
   },
   data () {
     return {
       swiperOption: {
         autoplay: {
           delay: 3500,
-          disableOnInteraction: false
+          disableOnInteraction: true
         },
         slidesPerView: 1,
         spaceBetween: 30,
@@ -59,8 +66,8 @@ export default {
           dynamicBullets: true
         },
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
         }
       },      
     }
@@ -96,19 +103,29 @@ export default {
   }
   .home-slide-image{ 
     margin-top: 0px;
-    .text-slide { font-size: 1.2rem; font-weight: 300; } 
+    .text-slide {
+      padding: 0; margin: 0; margin-top: 20px; line-height: 0.8;
+      
+      a:link, a:visited { color: #FFF; font-size: 1.2rem; font-weight: 500; background-color:rgb(0,0,0, 0.4); text-decoration: none; padding: 5px 10px;} 
+      a:hover { color: #FFF; background-color:rgb(0,0,0, 0.9);}
+    }
   }
 }
 
 @media only screen and (min-width: 801px) {
   .swiper, .swiper-slide-img {
-    height: 82vh;
+    height: 80vh;
   }
   .home-slide-image{ 
     margin-top: 0px;
-    .text-slide { font-size: 2rem; font-weight: 300; } 
+    .text-slide {
+      padding: 0; margin: 0; margin-top: 40px; line-height: 0.8;
+      a:link, a:visited { color: #FFF; font-size: 2.4rem; font-weight: 500; background-color:rgb(0,0,0, 0.4); text-decoration: none; padding: 5px 10px;}
+      a:hover { color: #FFF; background-color:rgb(0,0,0, 0.9);} 
+    }
   }
 }
+
 .img-post{ width: 100%; }
 .swiper-slide-img {
   background-repeat: no-repeat!important;

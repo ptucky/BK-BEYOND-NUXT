@@ -1,73 +1,69 @@
 <template>
   <v-app>
     <v-alert
-      border="bottom"
       dense
       text
       color="blue-grey"
       class="sign-newletter-header text-center"
     >
-    <v-dialog
-      v-model="dialog"
-      persistent
-      max-width="600px"
-    >
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          v-bind="attrs"
-          v-on="on"
-          text
-          small
-          rounded
-          color="red"
-        >
-          Sign Up for Newsletter
-          <v-icon
-            medium
+      <v-dialog
+        v-model="dialog"
+        persistent
+        max-width="600px"
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            v-bind="attrs"
+            v-on="on"
+            text
+            small
+            rounded
             color="red"
-            class="pl-1"
           >
-            mdi-email
-          </v-icon>
-        </v-btn>
-      </template>
-      <v-card>
-        <v-card-title>
-          <span class="headline">Signup for Newsletters</span>
-        </v-card-title>
-        <v-card-text>
-          <v-container>
-              <v-row>
-              <v-col cols="12">
-                  <v-text-field
-                  label="Email*"
-                  required
-                  ></v-text-field>
-              </v-col>
-              </v-row>
-          </v-container>
-          <small>*Sign up to get our article delivered to your inbox.</small>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="blue darken-1"
-            text
-            @click="dialog = false">
-            Close
+            Sign Up for Newsletter
+            <v-icon
+              medium
+              color="red"
+              class="pl-1"
+            >
+              mdi-email
+            </v-icon>
           </v-btn>
-          <v-btn
-            color="blue darken-1"
-            text
-            @click="dialog = false">
-            Save
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-
-
-
+        </template>
+        <v-card>
+          <v-card-title>
+            <span class="headline">Signup for Newsletters</span>
+          </v-card-title>
+          <v-card-text>
+            <v-container>
+                <v-row>
+                <v-col cols="12">
+                    <v-text-field
+                    label="Email*"
+                    required
+                    ></v-text-field>
+                </v-col>
+                </v-row>
+            </v-container>
+            <small>*Sign up to get our article delivered to your inbox.</small>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              color="blue darken-1"
+              text
+              @click="dialog = false">
+              Close
+            </v-btn>
+            <v-btn
+              color="blue darken-1"
+              text
+              @click="dialog = false">
+              Save
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </v-alert>
 
     <v-app-bar
@@ -83,7 +79,7 @@
         >
       </nuxt-link>
     
-    <v-spacer />
+      <v-spacer />
 
       <v-row
         align="center"
@@ -101,7 +97,7 @@
         </v-btn>
       </v-row>
 
-    <v-spacer />
+      <v-spacer />
     
       <div class="ui-widget">
         <div style="float:left;">
@@ -146,7 +142,7 @@
     </v-app-bar>
 
     <v-container fluid>
-      <v-main class="grey--text text--darken-2 text-container">
+      <v-main class="grey--text text--darken-2 text-container" style="margin-top: -5px;">
         <nuxt />
       </v-main>
     </v-container>
@@ -169,7 +165,7 @@
           exact
         >
           <v-list-item-content>
-              <v-list-item-title v-text="item.title" class="text-center" />
+            <v-list-item-title v-text="item.title" class="text-center" />
           </v-list-item-content>
         </v-list-item>
 

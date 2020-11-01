@@ -4,7 +4,7 @@
       <v-col cols="12" sm="12" md="12" class="text-center">
         <h2 v-text="pageTitle"></h2>
       </v-col>
-      <v-col cols="12" sm="12" md="6" v-for="(post, index) in tags" :key="index">
+      <v-col cols="12" sm="12" md="4" v-for="(post, index) in tags" :key="index">
         <div class="text-left">
           <h3 class="home-head-title">
             <nuxt-link :to="{ path: post.slug }">
@@ -28,13 +28,13 @@
 import { getTags } from '~/api/posts';
 
 export default {
-    name: "WHatHappend",
+    name: "Talk",
     data() {
         return {
-          limitQuery: 6,
-          tagName: 'what-happend',
-          pageTitle: "What's happening",
-          tags: [],
+            limitQuery: 2,
+            tagName: 'talk',
+            pageTitle: "Talk",
+            tags: [],
         }
     },
     mounted() {
@@ -57,5 +57,4 @@ export default {
 
 <style lang="scss" scoped>
 .img-post{ width: 100%; }
-
 </style>

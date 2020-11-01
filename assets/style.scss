@@ -26,9 +26,13 @@ $app-bar-newsletter-color: #5d4037 !important;
         border-bottom-right-radius: 0 !important;
     }
 }
-.sign-newletter-header.v-alert--dense{padding-bottom: 10px !important;}
+.sign-newletter-header.v-alert--dense{padding-bottom: 5px !important;}
 .v-alert--dense{padding-top: 5px !important;}
 .text-container{ font-size: 0.95rem; }
+
+h3.home-head-title a:link, .home-head-title h3 a:visited{ font-size: 1.3rem; text-decoration: none; color: #000;}
+h3.home-head-title a:hover{ font-size: 1.3rem; text-decoration: underline; color: #1976d2; }
+
 /* SEARCH */
 .ui-widget {
     display: inline-block;
