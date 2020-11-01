@@ -1,6 +1,5 @@
 <template>
   <v-row class="row-cover-box" justify="center">
-  
     <div
       class="swiper home-slide-image"
       v-swiper:myDirectiveSwiper="swiperOption"
@@ -10,30 +9,27 @@
     >
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(latest, i) in latestPosts" :key="i">
-          <div class="swiper-slide-img" :style="{ 'width': '100%', 'background-image' : `url(${latest.feature_image})` }">
+          <div class="swiper-slide-img" :style="{ 'opacity': '0.9','width': '100%', 'background-image' : `url(${latest.feature_image})` }">
             <v-chip
               color="red"
               text-color="white"
               label
               small
             >
-              <v-icon left>
-                mdi-fire
-              </v-icon>
-              new
+              {{ latest.primary_tag.name }}
             </v-chip>
             <h1 class="text-slide white--text" v-text="latest.title"></h1>
           </div>
         </div>
       </div>
       <div class="swiper-pagination" slot="pagination"></div>
-      <div class="swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button-next" slot="button-next"></div>
+      <!-- <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div> -->
     </div>
     
     <WhatHappend />
-
-    
+    <BannerOne />
+    <LifeStyle />
 
   </v-row>
 </template>
@@ -44,6 +40,8 @@ import { getPosts } from '~/api/posts';
 export default {
   components: {
     WhatHappend: () => import('~/components/Home/WhatHappend.vue'),
+    BannerOne: () => import('~/components/Home/BannerOne.vue'),
+    LifeStyle: () => import('~/components/Home/LifeStyle.vue'),
   },
   data () {
     return {
@@ -92,7 +90,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 @media only screen and (max-width: 800px) {
   .swiper, .swiper-slide-img {
     height: 350px;

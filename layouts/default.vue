@@ -7,16 +7,69 @@
       color="blue-grey"
       class="sign-newletter-header text-center"
     >
-      <nuxt-link to="#">
-        Sign Up for Newsletter
-        <v-icon
-          medium
-          color="pink darken-1"
+    <v-dialog
+      v-model="dialog"
+      persistent
+      max-width="600px"
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn
+          v-bind="attrs"
+          v-on="on"
+          text
+          small
+          rounded
+          color="red"
         >
-           mdi-email
-        </v-icon>
-      </nuxt-link>
+          Sign Up for Newsletter
+          <v-icon
+            medium
+            color="red"
+            class="pl-1"
+          >
+            mdi-email
+          </v-icon>
+        </v-btn>
+      </template>
+      <v-card>
+        <v-card-title>
+          <span class="headline">Signup for Newsletters</span>
+        </v-card-title>
+        <v-card-text>
+          <v-container>
+              <v-row>
+              <v-col cols="12">
+                  <v-text-field
+                  label="Email*"
+                  required
+                  ></v-text-field>
+              </v-col>
+              </v-row>
+          </v-container>
+          <small>*Sign up to get our article delivered to your inbox.</small>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="blue darken-1"
+            text
+            @click="dialog = false">
+            Close
+          </v-btn>
+          <v-btn
+            color="blue darken-1"
+            text
+            @click="dialog = false">
+            Save
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
+
+
     </v-alert>
+
     <v-app-bar
       flat
       width="100%"
@@ -107,13 +160,7 @@
       class="app-bar-bg-color"
       dark
     >
-      <v-list>
-        <v-list-item>
-          <v-list-item-content>
-              <v-list-item-title class="text-center" />
-          </v-list-item-content>
-        </v-list-item>
-
+      <v-list class="mt-3">
         <v-list-item
           v-for="(item, i) in mainMenu"
           :key="i"
@@ -121,12 +168,12 @@
           router
           exact
         >
-        <v-list-item-content>
-            <v-list-item-title v-text="item.title" class="text-center" />
-        </v-list-item-content>
+          <v-list-item-content>
+              <v-list-item-title v-text="item.title" class="text-center" />
+          </v-list-item-content>
         </v-list-item>
 
-        <v-list-item class="mt-7"> 
+        <v-list-item class="mt-3"> 
           <v-list-item-content>
             <v-list-item-title>
               <v-layout justify-center row class="m-icon-group text-center">
@@ -228,6 +275,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
+      dialog: false,
     }
   },
   mounted() {

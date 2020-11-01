@@ -2,9 +2,9 @@
   <v-container class="grey--text text--darken-2 text-container">
     <v-row>
       <v-col cols="12" sm="12" md="12" class="text-center">
-        <h2>What’s happening</h2>
+        <h2>Life Style</h2>
       </v-col>
-      <v-col cols="12" sm="12" md="6" v-for="(post, index) in tags" :key="index">
+      <v-col cols="12" sm="12" md="4" v-for="(post, index) in tags" :key="index">
         <div class="text-left">
           <img :src="post.feature_image" class="img-post">
           <nuxt-link :to="{ path: post.slug }">
@@ -26,11 +26,11 @@
 import { getTags } from '~/api/posts';
 
 export default {
-    name: "WHatHappend",
+    name: "LifeStyle",
     data() {
         return {
-            limitQuery: 6,
-            tagName: 'what-happend',
+            limitQuery: 3,
+            tagName: 'lifestyle',
             pageTitle: this.pageName,
             tags: [],
         }
@@ -56,5 +56,4 @@ export default {
 
 <style lang="scss" scoped>
 .img-post{ width: 100%; }
-
 </style>
