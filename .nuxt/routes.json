@@ -28,6 +28,13 @@
     "_name": "_709ed0de"
   },
   {
+    "name": "index-two",
+    "path": "/index-two",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/index-two.vue",
+    "chunkName": "pages/index-two",
+    "_name": "_f4b908a4"
+  },
+  {
     "name": "lifestyle",
     "path": "/lifestyle",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle.vue",

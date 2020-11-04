@@ -57,8 +57,8 @@ export default {
           delay: 3500,
           disableOnInteraction: true
         },
-        //centeredSlides: true,
-        slidesPerView: 1,
+        centeredSlides: true,
+        slidesPerView: "auto",
         spaceBetween: 30,
         loop: true,
         pagination: {
@@ -106,21 +106,30 @@ export default {
     margin-top: 0px;
     .text-slide {
       padding: 0; margin: 0; margin-top: 20px; line-height: 0.8;
-      a:link, a:visited { color: #FFF; font-size: 1.2rem; font-weight: 500; background-color:rgb(0,0,0, 0.4); text-decoration: none; padding: 5px 10px;} 
+      a:link, a:visited { color: #FFF; font-size: 1.2rem; font-weight: 500; background-color:rgb(0,0,0, 0.4); text-decoration: none; padding: 5px 12px;} 
       a:hover { color: #FFF; background-color:rgb(0,0,0, 0.9);}
     }
   }
 }
 
 @media only screen and (min-width: 801px) {
+  .swiper-slide {
+    width: 60%;
+  }
+  .swiper-slide:nth-child(2n) {
+    width: 40%;
+  }
+  .swiper-slide:nth-child(3n) {
+    width: 40%;
+  }
   .swiper, .swiper-slide-img {
-    height: 80vh;
+    height: 70vh;
   }
   .home-slide-image{ 
     margin-top: 0px;
     .text-slide {
-      padding: 0; margin: 0; margin-top: 40px; line-height: 0.8;
-      a:link, a:visited { color: #FFF; font-size: 2.4rem; font-weight: 500; background-color:rgb(0,0,0, 0.4); text-decoration: none; padding: 5px 10px;}
+      padding: 0; margin: 0; margin-top: 40px; line-height: 1.18;
+      a:link, a:visited { color: #FFF; font-size: 1.8rem; font-weight: 500; background-color:rgb(0,0,0, 0.4); text-decoration: none; padding: 5px 12px;}
       a:hover { color: #FFF; background-color:rgb(0,0,0, 0.9);} 
     }
   }

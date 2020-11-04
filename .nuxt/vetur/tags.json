@@ -17,6 +17,12 @@
   "LazyBannerOne": {
     "description": "Auto imported from components/Home/BannerOne.vue"
   },
+  "BannerTwo": {
+    "description": "Auto imported from components/Home/BannerTwo.vue"
+  },
+  "LazyBannerTwo": {
+    "description": "Auto imported from components/Home/BannerTwo.vue"
+  },
   "LifeStyle": {
     "description": "Auto imported from components/Home/LifeStyle.vue"
   },

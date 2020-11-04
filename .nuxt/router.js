@@ -7,6 +7,7 @@ const _b175d826 = () => interopDefault(import('../pages/about/index.vue' /* webp
 const _9eeb2900 = () => interopDefault(import('../pages/contact/index.vue' /* webpackChunkName: "pages/contact/index" */))
 const _e804843e = () => interopDefault(import('../pages/cuisine.vue' /* webpackChunkName: "pages/cuisine" */))
 const _709ed0de = () => interopDefault(import('../pages/hotel.vue' /* webpackChunkName: "pages/hotel" */))
+const _f4b908a4 = () => interopDefault(import('../pages/index-two.vue' /* webpackChunkName: "pages/index-two" */))
 const _33c7ef12 = () => interopDefault(import('../pages/lifestyle.vue' /* webpackChunkName: "pages/lifestyle" */))
 const _993e57b4 = () => interopDefault(import('../pages/properties.vue' /* webpackChunkName: "pages/properties" */))
 const _5613575f = () => interopDefault(import('../pages/talk.vue' /* webpackChunkName: "pages/talk" */))
@@ -46,6 +47,10 @@ export const routerOptions = {
     path: "/hotel",
     component: _709ed0de,
     name: "hotel"
+  }, {
+    path: "/index-two",
+    component: _f4b908a4,
+    name: "index-two"
   }, {
     path: "/lifestyle",
     component: _33c7ef12,

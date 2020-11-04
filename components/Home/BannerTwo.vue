@@ -6,8 +6,8 @@
                     <v-flex hidden-sm-and-down class="desktop-ads">
                         <nuxt-link :to="`${linkUrl}`" target="_blank">
                             <img 
-                            title="Banner Desktop 970x250"
-                            src="~/assets/images/ads/banner-970x250.jpg">
+                            title="Banner Desktop 300x600"
+                            src="~/assets/images/ads/banner-300x600.jpg">
                         </nuxt-link>
                     </v-flex>
                     <v-flex hidden-md-and-up class="mobile-ads">
@@ -27,7 +27,7 @@
 /* eslint-disable */
 
 export default {
-    name: "BannerOne",
+    name: "BannerTwo",
     data() {
         return {
             linkUrl: '#',
@@ -38,21 +38,19 @@ export default {
 
 <style lang="scss" scoped>
 .desktop-ads {
-    border-top: 1px solid #333; border-bottom: 1px solid #333;
-    padding-top: 16px; padding-bottom: 10px;
+    margin-top: -25px;
     a:link, a:visited{ text-decoration: none; }
     text-align: center;
     img {
-        width: 970px;
-        height: 250px;
+        width: 300px;
+        height: 600px;
     }
 }
 .mobile-ads {
-    border: none;
     a:link, a:visited{ text-decoration: none; }
     text-align: center;
     img {
-        width: 100%;
+        width: 1005;
         height: 250px;
     }
 }

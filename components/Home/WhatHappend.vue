@@ -2,7 +2,7 @@
   <v-container class="grey--text text--darken-2 text-container">
     <v-row>
       <v-col cols="12" sm="12" md="12" class="text-center">
-        <h2 v-text="pageTitle"></h2>
+        <h2 class="page-title" v-text="pageTitle"></h2>
       </v-col>
       <v-col cols="12" sm="12" md="6" v-for="(post, index) in tags" :key="index">
         <div class="text-left">
