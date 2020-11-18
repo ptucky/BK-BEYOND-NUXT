@@ -2,25 +2,32 @@
   <v-container class="grey--text text--darken-2 text-container">
     <v-row>
       <v-col cols="12" sm="12" md="12" class="text-center">
-        <h2 class="page-title" v-text="pageTitle"></h2>
+        <h2 class="page-title">
+          <nuxt-link :to="{ path: tagName }" v-text="pageTitle">
+          </nuxt-link>
+        </h2>
       </v-col>
-      <v-col cols="12" sm="12" md="5">
-        <v-row>
-          <v-col class="mx-auto image-card">
+      
+      <v-col cols="12" sm="12" md="5" :style="{'background': '#f2f2f2'}">
+        <v-row class="pt-3">
+          <v-col class="mx-auto image-card home-head-title">
             <nuxt-link :to="{ path: tagsOne.slug }">
               <img :src="tagsOne.feature_image" class="img-post" :style="{ 'height' : '300px' }">
             </nuxt-link>
           </v-col>
         </v-row>
       </v-col>
-      <v-col cols="12" sm="12" md="3">
-        <v-row class="pt-3">
-          <nuxt-link :to="{ path: tagsOne.slug }">
-            <div v-text="tagsOne.title"></div>
-          </nuxt-link>
-          <p v-if="tagsOne.excerpt" v-text="tagsOne.excerpt"></p>
+      <v-col cols="12" sm="12" md="3" :style="{'background': '#f2f2f2'}">
+        <v-row class="pt-4 pr-2">
+          <h3 class="home-head-title">
+            <nuxt-link :to="{ path: tagsOne.slug }" :style="{'text-decoration': 'none'}">
+              {{ tagsOne.title }}
+            </nuxt-link>
+          </h3>
+          <p class="text-left" v-if="tagsOne.excerpt" v-text="tagsOne.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 350) + `...`"></p>
         </v-row>
       </v-col>
+
       <v-col cols="12" sm="12" md="4" class="text-center">
         <BannerThree />
       </v-col>
@@ -31,15 +38,18 @@
         <div v-swiper="swiperOption">
           <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="(post, index) in tags.slice(1, 6)" :key="index">
-              <nuxt-link :to="{ path: post.slug }">
-                <img :src="post.feature_image" class="img-post" :style="{ 'height' : '250px' }">
-                <div>
+              <h3 class="home-head-title">
+                <nuxt-link :to="{ path: tagsOne.slug }">
+                  <img :src="post.feature_image" class="img-post" :style="{ 'height' : '250px' }">
                   {{ post.title }}
-                </div>
-              </nuxt-link>
+                </nuxt-link>
+              </h3>
+              <div v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 200) + `...`"></div>
             </div>
           </div>
           <div class="swiper-pagination swiper-pagination-bullets"></div>
+          <!-- <div class="swiper-button-prev" slot="button-prev"></div>
+          <div class="swiper-button-next" slot="button-next"></div> -->
         </div>
       </v-col> 
     </v-row>
@@ -69,6 +79,27 @@ export default {
             pagination: {
               el: '.swiper-pagination',
               clickable: true
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev'
+            },
+            breakpoints: {
+              // when window width is >= 320px
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 30
+              },
+              // when window width is >= 480px
+              // 480: {
+              //   slidesPerView: 1,
+              //   spaceBetween: 30
+              // },
+              // when window width is >= 640px
+              640: {
+                slidesPerView: 3,
+                spaceBetween: 30
+              }
             }
           },
           limitQuery: 6,
@@ -99,5 +130,11 @@ export default {
 }
 @media only screen and (min-width: 801px) {
   .image-card{ width: 360px; }
+}
+.swiper-slide{
+  transition: transform .2s;
+}
+.swiper-slide:hover{
+  transform: scale(1.03);
 }
 </style>

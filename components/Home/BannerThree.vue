@@ -3,13 +3,6 @@
         <v-row>
             <v-col cols="12" sm="12" md="12" class="text-center">
                 <no-ssr>
-                    <!-- <v-flex hidden-sm-and-down class="desktop-ads">
-                        <nuxt-link :to="`${linkUrl}`" target="_blank">
-                            <img 
-                            title="Banner Desktop 300x600"
-                            src="~/assets/images/ads/banner-300x600.jpg">
-                        </nuxt-link>
-                    </v-flex> -->
                     <v-flex>
                         <nuxt-link :to="`${linkUrl}`" target="_blank">
                             <img 
@@ -37,20 +30,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.desktop-ads {
-    a:link, a:visited{ text-decoration: none; }
-    text-align: center;
-    img {
-        width: 300px;
-        height: 600px;
-    }
-}
-.mobile-ads {
-    a:link, a:visited{ text-decoration: none; }
-    text-align: center;
-    img {
-        width: 1005;
-        height: 250px;
-    }
-}
+
 </style>

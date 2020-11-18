@@ -37,6 +37,7 @@
     <LifeStyle />
     <Talk />
     <HotHotel />
+    <BannerFour />
 
   </v-row>
 </template>
@@ -51,6 +52,7 @@ export default {
     LifeStyle: () => import('~/components/Home/LifeStyle.vue'),
     Talk: () => import('~/components/Home/Talk.vue'),
     HotHotel: () => import('~/components/Home/HotHotel.vue'),
+    BannerFour: () => import('~/components/Home/BannerFour.vue'),
   },
   data () {
     return {

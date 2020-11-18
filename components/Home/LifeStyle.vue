@@ -2,21 +2,27 @@
   <v-container class="grey--text text--darken-2 text-container">
     <v-row>
       <v-col cols="12" sm="12" md="12" class="text-center">
-        <h2 class="page-title" v-text="pageTitle"></h2>
+        <h2 class="page-title">
+           <nuxt-link :to="{ path: tagName }" v-text="pageTitle">
+          </nuxt-link>
+        </h2>
       </v-col>
-      <v-col cols="12" sm="12" md="4" v-for="(post, index) in tags" :key="index">
-        <div class="text-left">
-          <h3 class="home-head-title">
-            <nuxt-link :to="{ path: post.slug }">
-              <img :src="post.feature_image" class="img-post">
-              {{ post.title }}
-            </nuxt-link>
-          </h3>
-          <p v-if="post.excerpt" v-text="post.excerpt"></p>
-          <v-spacer>
-            <!-- <small class="blue-grey--text text--lighten-2">{{ beautyFullDate(post.updated_at) }}</small> -->
-            <!-- <small class="blue-grey--text text--lighten-2" v-text="`by ${post.authors[0].name}`"></small> -->
-          </v-spacer>
+      <v-col>
+        <div v-swiper="swiperOption">
+          <div class="swiper-wrapper">
+            <div cols="12" sm="12" md="4" class="swiper-slide" v-for="(post, index) in tags" :key="index">
+              <h3 class="home-head-title">
+                <nuxt-link :to="{ path: post.slug }">
+                  <img :src="post.feature_image" class="img-post" :style="{ 'height' : '250px' }">
+                  {{ post.title }}
+                </nuxt-link>
+              </h3>
+              <div v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 200) + `...`"></div>
+            </div>
+          </div>
+          <div class="swiper-pagination swiper-pagination-bullets"></div>
+          <!-- <div class="swiper-button-prev" slot="button-prev"></div>
+          <div class="swiper-button-next" slot="button-next"></div> -->
         </div>
       </v-col>
     </v-row>
@@ -31,7 +37,41 @@ export default {
     name: "LifeStyle",
     data() {
         return {
-          limitQuery: 3,
+          swiperOption: {
+            autoplay: {
+              delay: 3500,
+              disableOnInteraction: true
+            },
+            slidesPerView: 3,
+            spaceBetween: 30,
+            freeMode: true,
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev'
+            },
+            breakpoints: {
+              // when window width is >= 320px
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 30
+              },
+              // when window width is >= 480px
+              // 480: {
+              //   slidesPerView: 1,
+              //   spaceBetween: 30
+              // },
+              // when window width is >= 640px
+              640: {
+                slidesPerView: 3,
+                spaceBetween: 30
+              }
+            }
+          },
+          limitQuery: 6,
           tagName: 'lifestyle',
           pageTitle: 'Life Style',
           tags: [],
@@ -57,4 +97,10 @@ export default {
 
 <style lang="scss" scoped>
 .img-post{ width: 100%; }
+.swiper-slide {
+  transition: transform .2s;
+}
+.swiper-slide:hover{
+  transform: scale(1.03);
+}
 </style>

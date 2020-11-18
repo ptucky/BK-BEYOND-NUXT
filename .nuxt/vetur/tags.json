@@ -11,6 +11,12 @@
   "LazyTagsList": {
     "description": "Auto imported from components/TagsList.vue"
   },
+  "BannerFour": {
+    "description": "Auto imported from components/Home/BannerFour.vue"
+  },
+  "LazyBannerFour": {
+    "description": "Auto imported from components/Home/BannerFour.vue"
+  },
   "BannerOne": {
     "description": "Auto imported from components/Home/BannerOne.vue"
   },

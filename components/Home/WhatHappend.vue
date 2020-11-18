@@ -2,17 +2,20 @@
   <v-container class="grey--text text--darken-2 text-container">
     <v-row>
       <v-col cols="12" sm="12" md="12" class="text-center">
-        <h2 class="page-title" v-text="pageTitle"></h2>
+        <h2 class="page-title">
+           <nuxt-link :to="{ path: tagName }" v-text="pageTitle">
+          </nuxt-link>
+        </h2>
       </v-col>
       <v-col cols="12" sm="12" md="6" v-for="(post, index) in tags" :key="index">
-        <div class="text-left">
+        <div class="text-left box-content">
           <h3 class="home-head-title">
             <nuxt-link :to="{ path: post.slug }">
               <img :src="post.feature_image" class="img-post">
               {{ post.title }}
             </nuxt-link>
           </h3>
-          <p v-if="post.excerpt" v-text="post.excerpt"></p>
+          <p v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 250) + `...`"></p>
           <v-spacer>
             <!-- <small class="blue-grey--text text--lighten-2">{{ beautyFullDate(post.updated_at) }}</small> -->
             <!-- <small class="blue-grey--text text--lighten-2" v-text="`by ${post.authors[0].name}`"></small> -->
@@ -57,5 +60,10 @@ export default {
 
 <style lang="scss" scoped>
 .img-post{ width: 100%; }
-
+.box-content {
+  transition: transform .2s;
+}
+.box-content:hover{
+  transform: scale(1.02);
+}
 </style>

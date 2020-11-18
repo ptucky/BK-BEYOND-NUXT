@@ -2,32 +2,24 @@
   <v-container class="grey--text text--darken-2 text-container">
     <v-row>
       <v-col cols="12" sm="12" md="12" class="text-center">
-        <h2 class="page-title" v-text="pageTitle"></h2>
+        <h2 class="page-title">
+          <nuxt-link :to="{ path: tagName }" v-text="pageTitle">
+          </nuxt-link>
+        </h2>
       </v-col>
       <v-col cols="12" sm="12" md="8">
         <v-row>
           <v-card
-            class="mx-auto image-card"
+            class="mx-auto image-card mb-4"
             v-for="(post, index) in tags" :key="index"
           >
-            <nuxt-link :to="{ path: post.slug }">
-              <img :src="post.feature_image" class="img-post">
-              <v-card-title>
-                {{ post.title }}
-              </v-card-title>
-            </nuxt-link>
-            <v-expand-transition>
-              <div>
-                <v-icon
-                  medium
-                  color="red"
-                  class="pl-3"
-                >
-                  mdi-clock
-                </v-icon>{{ post.authors[0].name }}
-                <v-card-text v-if="post.excerpt" v-text="post.excerpt"></v-card-text>
-              </div>
-            </v-expand-transition>
+            <h3 class="home-head-title">
+              <nuxt-link :to="{ path: post.slug }">
+                <img :src="post.feature_image" class="img-post" :style="{ 'height': '220px'}">
+                <div class="pl-2 pr-2">{{ post.title }}</div>
+              </nuxt-link>
+            </h3>
+            <v-card-text v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 250) + `...`"></v-card-text>
           </v-card>
         </v-row>
         <v-spacer />
@@ -58,19 +50,11 @@ export default {
     name: "Talk",
     components: {
       BannerTwo: () => import('~/components/Home/BannerTwo.vue'),
+      BannerThree: () => import('~/components/Home/BannerThree.vue'),
     },
     data() {
         return {
-            swiperOption: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-              freeMode: true,
-              pagination: {
-                el: '.swiper-pagination',
-                clickable: true
-              }
-            },
-            limitQuery: 2,
+            limitQuery: 4,
             tagName: 'talk',
             pageTitle: "Talk",
             tags: [],

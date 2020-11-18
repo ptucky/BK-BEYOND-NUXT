@@ -42,7 +42,11 @@ export default {
       { hid: "og:type", property: "og:type", content: "article" }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600|Material+Icons|Kanit|Quicksand|Sarabun|Montserrat:200,500,600,700"
+      }
     ]
   },
 

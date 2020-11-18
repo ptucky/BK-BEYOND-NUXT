@@ -31,8 +31,11 @@ $app-bar-newsletter-color: #5d4037 !important;
 .text-container{ font-size: 0.95rem; }
 
 h2.page-title{ font-size: 2.2rem; }
-h3.home-head-title a:link, .home-head-title a:visited{ font-size: 1.3rem; text-decoration: none; color: #000 !important;}
-h3.home-head-title a:hover{ font-size: 1.3rem; text-decoration: underline; color: #1976d2 !important; }
+h2.page-title a{ font-family: Kanit,sans-serif; text-decoration: none; color: #343f44 !important; }
+h2.page-title a:hover{ color: #F44336 !important; }
+
+.home-head-title a:link, .home-head-title a:visited{ font-size: 1.2rem; text-decoration: none !important; color: #000 !important;}
+.home-head-title a:hover{ font-size: 1.2rem; text-decoration: underline; color: #F44336 !important; }
 
 /* SEARCH */
 .ui-widget {
