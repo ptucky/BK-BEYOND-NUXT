@@ -100,7 +100,7 @@ export default {
 <style lang="scss" scoped>
 @media only screen and (max-width: 800px) {
   .swiper, .swiper-slide-img {
-    height: 350px;
+    height: 300px;
   }
   .home-slide-image{ 
     margin-top: 0px;

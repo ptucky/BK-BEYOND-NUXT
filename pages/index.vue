@@ -36,6 +36,7 @@
     <BannerOne />
     <LifeStyle />
     <Talk />
+    <HotHotel />
 
   </v-row>
 </template>
@@ -49,6 +50,7 @@ export default {
     BannerOne: () => import('~/components/Home/BannerOne.vue'),
     LifeStyle: () => import('~/components/Home/LifeStyle.vue'),
     Talk: () => import('~/components/Home/Talk.vue'),
+    HotHotel: () => import('~/components/Home/HotHotel.vue'),
   },
   data () {
     return {

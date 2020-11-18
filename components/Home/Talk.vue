@@ -4,7 +4,6 @@
       <v-col cols="12" sm="12" md="12" class="text-center">
         <h2 class="page-title" v-text="pageTitle"></h2>
       </v-col>
-
       <v-col cols="12" sm="12" md="8">
         <v-row>
           <v-card
@@ -17,18 +16,15 @@
                 {{ post.title }}
               </v-card-title>
             </nuxt-link>
-            <v-card-subtitle>
-              <v-icon
-                medium
-                color="red"
-                class="pl-1"
-              >
-                mdi-clock
-              </v-icon> 2-3 minutes read
-            </v-card-subtitle>
             <v-expand-transition>
               <div>
-                <v-divider></v-divider>
+                <v-icon
+                  medium
+                  color="red"
+                  class="pl-3"
+                >
+                  mdi-clock
+                </v-icon>{{ post.authors[0].name }}
                 <v-card-text v-if="post.excerpt" v-text="post.excerpt"></v-card-text>
               </div>
             </v-expand-transition>
@@ -65,6 +61,15 @@ export default {
     },
     data() {
         return {
+            swiperOption: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+              freeMode: true,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+              }
+            },
             limitQuery: 2,
             tagName: 'talk',
             pageTitle: "Talk",
@@ -76,8 +81,8 @@ export default {
     },
     methods: {
         async asyncData (key, limit) {
-            const tag = await getTags(key, limit)
-            this.tags = tag
+          const tag = await getTags(key, limit)
+          this.tags = tag
         },
     }
 }

@@ -17,11 +17,23 @@
   "LazyBannerOne": {
     "description": "Auto imported from components/Home/BannerOne.vue"
   },
+  "BannerThree": {
+    "description": "Auto imported from components/Home/BannerThree.vue"
+  },
+  "LazyBannerThree": {
+    "description": "Auto imported from components/Home/BannerThree.vue"
+  },
   "BannerTwo": {
     "description": "Auto imported from components/Home/BannerTwo.vue"
   },
   "LazyBannerTwo": {
     "description": "Auto imported from components/Home/BannerTwo.vue"
+  },
+  "HotHotel": {
+    "description": "Auto imported from components/Home/HotHotel.vue"
+  },
+  "LazyHotHotel": {
+    "description": "Auto imported from components/Home/HotHotel.vue"
   },
   "LifeStyle": {
     "description": "Auto imported from components/Home/LifeStyle.vue"

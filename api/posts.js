@@ -54,12 +54,15 @@ export async function getPage(pageSlug)
 export async function getTags(tagName, limit) 
 {
     let limitPage = (limit && limit > 1)? limit : "all"
+    let includeAuthor = (tagName == "talk")? "authors" : "none"
+
     return await api.posts.browse(
         {
-            limit: limitPage,
             //include: "tags,authors",
-            filter: "tag:" + `${tagName}`
-            
+            limit: limitPage,
+            include: includeAuthor,
+            filter: "tag:" + `${tagName}`,
+            order: "published_at DESC"
         }
     )
     .catch(err => {
