@@ -2,7 +2,7 @@
     <v-row class="row-cover-box" justify="center">
         <v-col cols="12" sm="8" md="12">
             <div v-for="(tag, i) in tags" :key="i">
-                <nuxt-link  :to="{ path: tag.slug }">
+                <nuxt-link  :to="{ path: pageTitle + '/' + tag.slug }">
                     <h1 v-if="tag.title" v-text="tag.title" class="text-center"></h1>
                 </nuxt-link>
                 <div class="text-justify pt-3">

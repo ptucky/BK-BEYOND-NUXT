@@ -28,8 +28,8 @@
         </div>
       </div>
       <div class="swiper-pagination" slot="pagination"></div>
-      <div class="swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button-next" slot="button-next"></div>
+      <div class="swiper-button-prev hidden-lg-and-up" slot="button-prev"></div>
+      <div class="swiper-button-next hidden-lg-and-up" slot="button-next"></div>
     </div>
     
     <WhatHappend />
@@ -57,10 +57,10 @@ export default {
   data () {
     return {
       swiperOption: {
-        // autoplay: {
-        //   delay: 3500,
-        //   disableOnInteraction: true
-        // },
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: true
+        },
         //centeredSlides: true,
         slidesPerView: 1,
         spaceBetween: 5,
@@ -121,8 +121,8 @@ export default {
 
 @media only screen and (min-width: 801px) {
   .row-cover-box{ 
-    margin-top: -74px; 
-    .swiper-slide-img { opacity: 0.9; }
+    margin-top: -75px; 
+    .swiper-slide-img { opacity: 0.95; }
   }
   .swiper, .swiper-slide-img {
     height: 80vh;

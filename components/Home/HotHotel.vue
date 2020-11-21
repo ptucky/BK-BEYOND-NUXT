@@ -11,7 +11,7 @@
       <v-col cols="12" sm="12" md="5" :style="{'background': '#f2f2f2'}">
         <v-row class="pt-3">
           <v-col class="mx-auto image-card home-head-title">
-            <nuxt-link :to="{ path: tagsOne.slug }">
+            <nuxt-link :to="{ path: tagName + '/' + tagsOne.slug }">
               <img :src="tagsOne.feature_image" class="img-post" :style="{ 'height' : '300px' }">
             </nuxt-link>
           </v-col>
@@ -20,7 +20,7 @@
       <v-col cols="12" sm="12" md="3" :style="{'background': '#f2f2f2'}">
         <v-row class="pt-4 hotel-cover-box-show">
           <h3 class="home-head-title text-titile-link">
-            <nuxt-link :to="{ path: tagsOne.slug }" :style="{'text-decoration': 'none'}">
+            <nuxt-link :to="{ path:  tagName + '/' +  tagsOne.slug }" :style="{'text-decoration': 'none'}">
               {{ tagsOne.title }}
             </nuxt-link>
           </h3>
@@ -37,7 +37,7 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="(post, index) in tags.slice(1, 6)" :key="index">
               <h3 class="home-head-title text-titile-link">
-                <nuxt-link :to="{ path: tagsOne.slug }">
+                <nuxt-link :to="{ path: tagName + '/' +  post.slug }">
                   <img :src="post.feature_image" class="img-post" :style="{ 'height' : '250px' }">
                   {{ post.title }}
                 </nuxt-link>
@@ -141,7 +141,7 @@ export default {
   .swiper-slide{
     transition: transform .2s;
     img {
-      opacity: 0.85;
+      opacity: 0.9;
     }
   }
   .swiper-slide:hover{

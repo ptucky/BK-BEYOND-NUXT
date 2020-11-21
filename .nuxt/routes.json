@@ -16,16 +16,16 @@
   {
     "name": "cuisine",
     "path": "/cuisine",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/cuisine.vue",
-    "chunkName": "pages/cuisine",
-    "_name": "_e804843e"
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/cuisine/index.vue",
+    "chunkName": "pages/cuisine/index",
+    "_name": "_662297a4"
   },
   {
     "name": "hotel",
     "path": "/hotel",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/hotel.vue",
-    "chunkName": "pages/hotel",
-    "_name": "_709ed0de"
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/hotel/index.vue",
+    "chunkName": "pages/hotel/index",
+    "_name": "_1ad76d54"
   },
   {
     "name": "index-two",
@@ -37,30 +37,79 @@
   {
     "name": "lifestyle",
     "path": "/lifestyle",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle.vue",
-    "chunkName": "pages/lifestyle",
-    "_name": "_33c7ef12"
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle/index.vue",
+    "chunkName": "pages/lifestyle/index",
+    "_name": "_80553fd6"
   },
   {
     "name": "properties",
     "path": "/properties",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/properties.vue",
-    "chunkName": "pages/properties",
-    "_name": "_993e57b4"
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/properties/index.vue",
+    "chunkName": "pages/properties/index",
+    "_name": "_426b2629"
   },
   {
     "name": "talk",
     "path": "/talk",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/talk.vue",
-    "chunkName": "pages/talk",
-    "_name": "_5613575f"
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/talk/index.vue",
+    "chunkName": "pages/talk/index",
+    "_name": "_2f329aa2"
   },
   {
     "name": "what-happend",
     "path": "/what-happend",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/what-happend.vue",
-    "chunkName": "pages/what-happend",
-    "_name": "_5cbdd6a8"
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/what-happend/index.vue",
+    "chunkName": "pages/what-happend/index",
+    "_name": "_20032ba2"
+  },
+  {
+    "name": "X_slug",
+    "path": "/X_slug",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/X_slug/index.vue",
+    "chunkName": "pages/X_slug/index",
+    "_name": "_f89e7430"
+  },
+  {
+    "name": "what-happend-all",
+    "path": "/what-happend/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/what-happend/_.vue",
+    "chunkName": "pages/what-happend/_",
+    "_name": "_24014488"
+  },
+  {
+    "name": "talk-all",
+    "path": "/talk/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/talk/_.vue",
+    "chunkName": "pages/talk/_",
+    "_name": "_1eebbfaf"
+  },
+  {
+    "name": "properties-all",
+    "path": "/properties/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/properties/_.vue",
+    "chunkName": "pages/properties/_",
+    "_name": "_5ecd26b6"
+  },
+  {
+    "name": "lifestyle-all",
+    "path": "/lifestyle/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle/_.vue",
+    "chunkName": "pages/lifestyle/_",
+    "_name": "_61d936a2"
+  },
+  {
+    "name": "hotel-all",
+    "path": "/hotel/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/hotel/_.vue",
+    "chunkName": "pages/hotel/_",
+    "_name": "_c38c893e"
+  },
+  {
+    "name": "cuisine-all",
+    "path": "/cuisine/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/cuisine/_.vue",
+    "chunkName": "pages/cuisine/_",
+    "_name": "_f852e49e"
   },
   {
     "name": "index",
@@ -68,12 +117,5 @@
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/index.vue",
     "chunkName": "pages/index",
     "_name": "_b34d80a2"
-  },
-  {
-    "name": "slug",
-    "path": "/:slug",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/_slug/index.vue",
-    "chunkName": "pages/_slug/index",
-    "_name": "_cfbb08ac"
   }
 ]

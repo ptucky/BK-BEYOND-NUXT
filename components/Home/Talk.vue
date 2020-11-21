@@ -13,7 +13,7 @@
             v-for="(post, index) in tags" :key="index"
           >
             <h3 class="home-head-title text-titile-link">
-              <nuxt-link :to="{ path: post.slug }">
+              <nuxt-link :to="{ path: tagName + '/' + post.slug }">
                 <img :src="post.feature_image" class="img-post" :style="{ 'height': '220px'}">
                 <div class="pl-2 pr-2">{{ post.title }}</div>
               </nuxt-link>
@@ -84,7 +84,7 @@ export default {
 {
   .image-card{ width: 360px; }
   img {
-    opacity: 0.85;
+    opacity: 0.9;
   }
   img:hover {
     opacity: 1;

@@ -9,7 +9,7 @@
       <v-col cols="12" sm="12" md="6" v-for="(post, index) in tags" :key="index">
         <div class="text-left box-content">
           <h3 class="home-head-title text-titile-link">
-            <nuxt-link :to="{ path: post.slug }">
+            <nuxt-link :to="{ path: tagName + '/' + post.slug }">
               <img :src="post.feature_image" class="img-post">
               {{ post.title }}
             </nuxt-link>
@@ -70,7 +70,7 @@ export default {
   .box-content {
     transition: transform .2s;
     img {
-      opacity: 0.85;
+      opacity: 0.9;
     }
   }
   .box-content:hover{

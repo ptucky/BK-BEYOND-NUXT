@@ -5,65 +5,101 @@
       text
       class="sign-newletter-header text-center hidden-sm-and-down hidden-xs-only"
     >
-      <v-dialog
-        v-model="dialog"
-        persistent
-        max-width="600px"
-      >
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn
-            v-bind="attrs"
-            v-on="on"
-            text
-            small
-            rounded
-            class="text-signup-newsletter"
+      <div>
+        <div style="float: left;">
+          <div class="m-icon-group-top text-center">
+            <a href="https://www.facebook.com/bangkokandbeyond" target="_blank" rel="nofollow">
+                <v-icon
+                  medium
+                  color="blue darken-1"
+                  v-ripple
+                >
+                  mdi-facebook
+                </v-icon>
+            </a>
+            <a href="https://www.instagram.com/bkbeyond/" target="_blank" rel="nofollow">
+              <v-icon
+                  medium
+                  color="pink lighten-1"
+                  v-ripple
+                >
+                  mdi-instagram
+                </v-icon>
+            </a>
+            <a href="https://twitter.com/bk_beyond" target="_blank" rel="nofollow">
+              <v-icon
+                  medium
+                  color="light-blue lighten-2"
+                  v-ripple
+                >
+                  mdi-twitter
+                </v-icon>
+            </a>
+          </div>
+        </div>
+        <div style="float: right;">
+          <!-- <img src="~/assets/images/favicon-32x32.png" style="width: 20px; vertical-align: middle;"> -->
+          <v-dialog
+            v-model="dialog"
+            persistent
+            max-width="600px"
           >
-            Sign Up for Newsletter
-            <v-icon
-              medium
-              class="pl-1"
-            >
-              mdi-email
-            </v-icon>
-          </v-btn>
-        </template>
-        <v-card>
-          <v-card-title>
-            <span class="headline">Signup for Newsletters</span>
-          </v-card-title>
-          <v-card-text>
-            <v-container>
-                <v-row>
-                <v-col cols="12">
-                    <v-text-field
-                    label="Email*"
-                    required
-                    ></v-text-field>
-                </v-col>
-                </v-row>
-            </v-container>
-            <small>*Sign up to get our article delivered to your inbox.</small>
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn
-              color="red"
-              text
-              @click="dialog = false">
-              Close
-            </v-btn>
-            <v-btn
-              color="red"
-              text
-              @click="dialog = false">
-              Send
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                text
+                small
+                rounded
+                class="text-signup-newsletter"
+              >
+                Sign Up for Newsletter
+                <v-icon
+                  medium
+                  class="pl-1"
+                >
+                  mdi-email
+                </v-icon>
+              </v-btn>
+            </template>
+            <v-card>
+              <v-card-title>
+                <span class="headline">Signup for Newsletters</span>
+              </v-card-title>
+              <v-card-text>
+                <v-container>
+                    <v-row>
+                    <v-col cols="12">
+                        <v-text-field
+                        label="Email*"
+                        required
+                        ></v-text-field>
+                    </v-col>
+                    </v-row>
+                </v-container>
+                <small>*Sign up to get our article delivered to your inbox.</small>
+              </v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn
+                  color="red"
+                  text
+                  @click="dialog = false">
+                  Close
+                </v-btn>
+                <v-btn
+                  color="red"
+                  text
+                  @click="dialog = false">
+                  Send
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </div>
+      </div>
     </v-alert>
-
+    
     <v-app-bar
       flat
       width="100%"
@@ -203,6 +239,15 @@
       </v-list>
     </v-navigation-drawer>
 
+    <!-- <footer class="footer">
+      <div class="footer-box">
+        <a href="mailto:info@bk-beyond.com">
+          Email: info@bk-beyond.com</a>
+          <br />
+          Copyright Bangkok & Beyond. All rights reserved.
+      </div>
+    </footer> -->
+
   </v-app>
 </template>
 
@@ -325,9 +370,7 @@ export default {
           {
 
             document.getElementById('bkbeyond-logo').style.transition = '.2s'
-            
-            document.querySelector('.theme--light.v-app-bar.v-toolbar.v-sheet').style.background = '#e2e4eb' //#e2e4eb
-
+            document.querySelector('.theme--light.v-app-bar.v-toolbar.v-sheet').style.background = '#e2e4eb'
             document.getElementById('app-bar').style.position = 'fixed'
 
             if (checkDeveice == 'mobile_tablet') {

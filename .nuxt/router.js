@@ -5,15 +5,21 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _b175d826 = () => interopDefault(import('../pages/about/index.vue' /* webpackChunkName: "pages/about/index" */))
 const _9eeb2900 = () => interopDefault(import('../pages/contact/index.vue' /* webpackChunkName: "pages/contact/index" */))
-const _e804843e = () => interopDefault(import('../pages/cuisine.vue' /* webpackChunkName: "pages/cuisine" */))
-const _709ed0de = () => interopDefault(import('../pages/hotel.vue' /* webpackChunkName: "pages/hotel" */))
+const _662297a4 = () => interopDefault(import('../pages/cuisine/index.vue' /* webpackChunkName: "pages/cuisine/index" */))
+const _1ad76d54 = () => interopDefault(import('../pages/hotel/index.vue' /* webpackChunkName: "pages/hotel/index" */))
 const _f4b908a4 = () => interopDefault(import('../pages/index-two.vue' /* webpackChunkName: "pages/index-two" */))
-const _33c7ef12 = () => interopDefault(import('../pages/lifestyle.vue' /* webpackChunkName: "pages/lifestyle" */))
-const _993e57b4 = () => interopDefault(import('../pages/properties.vue' /* webpackChunkName: "pages/properties" */))
-const _5613575f = () => interopDefault(import('../pages/talk.vue' /* webpackChunkName: "pages/talk" */))
-const _5cbdd6a8 = () => interopDefault(import('../pages/what-happend.vue' /* webpackChunkName: "pages/what-happend" */))
+const _80553fd6 = () => interopDefault(import('../pages/lifestyle/index.vue' /* webpackChunkName: "pages/lifestyle/index" */))
+const _426b2629 = () => interopDefault(import('../pages/properties/index.vue' /* webpackChunkName: "pages/properties/index" */))
+const _2f329aa2 = () => interopDefault(import('../pages/talk/index.vue' /* webpackChunkName: "pages/talk/index" */))
+const _20032ba2 = () => interopDefault(import('../pages/what-happend/index.vue' /* webpackChunkName: "pages/what-happend/index" */))
+const _f89e7430 = () => interopDefault(import('../pages/X_slug/index.vue' /* webpackChunkName: "pages/X_slug/index" */))
+const _24014488 = () => interopDefault(import('../pages/what-happend/_.vue' /* webpackChunkName: "pages/what-happend/_" */))
+const _1eebbfaf = () => interopDefault(import('../pages/talk/_.vue' /* webpackChunkName: "pages/talk/_" */))
+const _5ecd26b6 = () => interopDefault(import('../pages/properties/_.vue' /* webpackChunkName: "pages/properties/_" */))
+const _61d936a2 = () => interopDefault(import('../pages/lifestyle/_.vue' /* webpackChunkName: "pages/lifestyle/_" */))
+const _c38c893e = () => interopDefault(import('../pages/hotel/_.vue' /* webpackChunkName: "pages/hotel/_" */))
+const _f852e49e = () => interopDefault(import('../pages/cuisine/_.vue' /* webpackChunkName: "pages/cuisine/_" */))
 const _b34d80a2 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
-const _cfbb08ac = () => interopDefault(import('../pages/_slug/index.vue' /* webpackChunkName: "pages/_slug/index" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -41,11 +47,11 @@ export const routerOptions = {
     name: "contact"
   }, {
     path: "/cuisine",
-    component: _e804843e,
+    component: _662297a4,
     name: "cuisine"
   }, {
     path: "/hotel",
-    component: _709ed0de,
+    component: _1ad76d54,
     name: "hotel"
   }, {
     path: "/index-two",
@@ -53,28 +59,52 @@ export const routerOptions = {
     name: "index-two"
   }, {
     path: "/lifestyle",
-    component: _33c7ef12,
+    component: _80553fd6,
     name: "lifestyle"
   }, {
     path: "/properties",
-    component: _993e57b4,
+    component: _426b2629,
     name: "properties"
   }, {
     path: "/talk",
-    component: _5613575f,
+    component: _2f329aa2,
     name: "talk"
   }, {
     path: "/what-happend",
-    component: _5cbdd6a8,
+    component: _20032ba2,
     name: "what-happend"
+  }, {
+    path: "/X_slug",
+    component: _f89e7430,
+    name: "X_slug"
+  }, {
+    path: "/what-happend/*",
+    component: _24014488,
+    name: "what-happend-all"
+  }, {
+    path: "/talk/*",
+    component: _1eebbfaf,
+    name: "talk-all"
+  }, {
+    path: "/properties/*",
+    component: _5ecd26b6,
+    name: "properties-all"
+  }, {
+    path: "/lifestyle/*",
+    component: _61d936a2,
+    name: "lifestyle-all"
+  }, {
+    path: "/hotel/*",
+    component: _c38c893e,
+    name: "hotel-all"
+  }, {
+    path: "/cuisine/*",
+    component: _f852e49e,
+    name: "cuisine-all"
   }, {
     path: "/",
     component: _b34d80a2,
     name: "index"
-  }, {
-    path: "/:slug",
-    component: _cfbb08ac,
-    name: "slug"
   }],
 
   fallback: false
