@@ -145,11 +145,10 @@
         <v-menu
           v-for="(item, i) in mainMenu"
           :key="i"
-          :to="!item.subItems ? item.to : '#'"
           offset-y
         >
           <template v-slot:activator="{ attrs, on }">
-            <v-btn text class="top-menu-dt" v-bind="attrs" v-on="on">
+            <v-btn text class="top-menu-dt" v-bind="attrs" v-on="on" :to="!item.subItems ? item.to : '#'">
               {{ item.title }}
               <v-icon dark v-if="item.subItems">arrow_drop_down</v-icon>
             </v-btn>
