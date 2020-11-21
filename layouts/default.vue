@@ -18,12 +18,11 @@
             text
             small
             rounded
-            color="red"
+            class="text-signup-newsletter"
           >
             Sign Up for Newsletter
             <v-icon
               medium
-              color="red"
               class="pl-1"
             >
               mdi-email
@@ -50,13 +49,13 @@
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn
-              color="blue darken-1"
+              color="red"
               text
               @click="dialog = false">
               Close
             </v-btn>
             <v-btn
-              color="blue darken-1"
+              color="red"
               text
               @click="dialog = false">
               Save
@@ -78,9 +77,7 @@
           src="~/assets/images/bk-beyong-logo.png"
         >
       </nuxt-link>
-    
       <v-spacer />
-
       <v-row
         align="center"
         justify="space-around"

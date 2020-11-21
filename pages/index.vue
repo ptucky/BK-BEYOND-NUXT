@@ -57,13 +57,13 @@ export default {
   data () {
     return {
       swiperOption: {
-        autoplay: {
-          delay: 3500,
-          disableOnInteraction: true
-        },
+        // autoplay: {
+        //   delay: 3500,
+        //   disableOnInteraction: true
+        // },
         //centeredSlides: true,
         slidesPerView: 1,
-        spaceBetween: 30,
+        spaceBetween: 5,
         loop: true,
         pagination: {
           el: '.swiper-pagination',
@@ -79,7 +79,6 @@ export default {
   },
   // mounted() {
   //   this.latestPost()
-  
   // },
   async asyncData () {
     const latestPosts = await getPosts(6);
@@ -103,6 +102,7 @@ export default {
 
 <style lang="scss" scoped>
 @media only screen and (max-width: 800px) {
+  .row-cover-box{ margin-top: -73px;}
   .swiper, .swiper-slide-img {
     height: 350px;
   }
@@ -117,13 +117,14 @@ export default {
 }
 
 @media only screen and (min-width: 801px) {
+  .row-cover-box{ margin-top: -73px;}
   .swiper, .swiper-slide-img {
     height: 80vh;
   }
   .home-slide-image{ 
     margin-top: 0px;
-    .text-slide {
-      padding: 0; margin: 0; margin-top: 40px; line-height: 0.8;
+     .text-slide {
+      padding: 0; margin: 0; margin-top: 150px; line-height: 0.8; 
       a:link, a:visited { color: #FFF; font-size: 2.4rem; font-weight: 500; background-color:rgb(0,0,0, 0.4); text-decoration: none; padding: 5px 10px;}
       a:hover { color: #FFF; background-color:rgb(0,0,0, 0.9);} 
     }
