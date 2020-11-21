@@ -11,7 +11,7 @@ export default {
     },
     data() {
       return {
-        pageName: "what-happend",
+        pageName: "what-happening",
       }
     }
 }

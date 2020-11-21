@@ -35,7 +35,7 @@
     <WhatHappend />
     <BannerOne />
     <LifeStyle />
-    <Talk />
+    <People />
     <HotHotel />
     <BannerFour />
 
@@ -50,7 +50,7 @@ export default {
     WhatHappend: () => import('~/components/Home/WhatHappend.vue'),
     BannerOne: () => import('~/components/Home/BannerOne.vue'),
     LifeStyle: () => import('~/components/Home/LifeStyle.vue'),
-    Talk: () => import('~/components/Home/Talk.vue'),
+    People: () => import('~/components/Home/People.vue'),
     HotHotel: () => import('~/components/Home/HotHotel.vue'),
     BannerFour: () => import('~/components/Home/BannerFour.vue'),
   },
@@ -121,7 +121,7 @@ export default {
 
 @media only screen and (min-width: 801px) {
   .row-cover-box{ 
-    margin-top: -75px; 
+    margin-top: -88px; 
     .swiper-slide-img { opacity: 0.95; }
   }
   .swiper, .swiper-slide-img {

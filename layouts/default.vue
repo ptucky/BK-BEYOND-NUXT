@@ -5,14 +5,23 @@
       text
       class="sign-newletter-header text-center hidden-sm-and-down hidden-xs-only"
     >
-      <div>
-        <div style="float: left;">
+      <v-card
+        class="d-flex justify-space-between"
+        flat
+        color="transparent"
+      >
+        <v-card
+          outlined
+          flat
+          color="transparent"
+        >
           <div class="m-icon-group-top text-center">
             <a href="https://www.facebook.com/bangkokandbeyond" target="_blank" rel="nofollow">
                 <v-icon
                   medium
-                  color="blue darken-1"
+                  color="grey"
                   v-ripple
+                  class="fb"
                 >
                   mdi-facebook
                 </v-icon>
@@ -20,8 +29,9 @@
             <a href="https://www.instagram.com/bkbeyond/" target="_blank" rel="nofollow">
               <v-icon
                   medium
-                  color="pink lighten-1"
+                  color="grey"
                   v-ripple
+                  class="ig"
                 >
                   mdi-instagram
                 </v-icon>
@@ -29,16 +39,29 @@
             <a href="https://twitter.com/bk_beyond" target="_blank" rel="nofollow">
               <v-icon
                   medium
-                  color="light-blue lighten-2"
+                  color="grey"
                   v-ripple
+                  class="tw"
                 >
                   mdi-twitter
                 </v-icon>
             </a>
           </div>
-        </div>
-        <div style="float: right;">
-          <!-- <img src="~/assets/images/favicon-32x32.png" style="width: 20px; vertical-align: middle;"> -->
+        </v-card>
+        
+        <v-card
+          outlined
+          flat
+          color="transparent"
+        >
+          <img src="~/assets/images/favicon-32x32.png" class="ml-10" style="width: 26px; vertical-align: middle;">
+        </v-card>
+
+        <v-card
+          outlined
+          flat
+          color="transparent"
+        >
           <v-dialog
             v-model="dialog"
             persistent
@@ -96,8 +119,8 @@
               </v-card-actions>
             </v-card>
           </v-dialog>
-        </div>
-      </div>
+        </v-card>
+      </v-card>
     </v-alert>
     
     <v-app-bar
@@ -119,14 +142,30 @@
         class="hidden-sm-and-down hidden-xs-only"
         id="app-bar-tab"
       >
-        <v-btn text
+        <v-menu
           v-for="(item, i) in mainMenu"
           :key="i"
-          class="m-sub-menu-padding top-menu-dt"
-          :to="item.to"
+          :to="!item.subItems ? item.to : '#'"
+          offset-y
         >
-          {{ item.title }}
-        </v-btn>
+          <template v-slot:activator="{ attrs, on }">
+            <v-btn text class="top-menu-dt" v-bind="attrs" v-on="on">
+              {{ item.title }}
+              <v-icon dark v-if="item.subItems">arrow_drop_down</v-icon>
+            </v-btn>
+          </template>
+          <v-list v-if="item.subItems">
+            <v-list-item
+              v-for="(child, i) in item.subItems"
+              :key="i"
+              :href="child.to"
+              :target="child.target"
+              link
+            >
+              <v-list-item-title v-text="child.title" />
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </v-row>
 
       <v-spacer />
@@ -188,20 +227,8 @@
       class="app-bar-bg-color"
       dark
     >
-      <v-list class="mt-3">
-        <v-list-item
-          v-for="(item, i) in mainMenu"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" class="text-center" />
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item class="mt-3"> 
+      <v-list>
+        <v-list-item> 
           <v-list-item-content>
             <v-list-item-title>
               <v-layout justify-center row class="m-icon-group text-center">
@@ -236,6 +263,49 @@
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
+        <v-list-item
+          v-for="(item, i) in mainMenu" v-if="!item.subItems"
+          :key="i"
+          :to="!item.subItems ? item.to : '#'"
+          router
+          exact
+          active-class="red--text"
+      
+        >
+          <v-list-item-content>
+            <v-list-item-title v-text="item.title" class="text-left" />
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-group
+          v-for="(item, i) in mainMenu" v-if="item.subItems"
+          :key="i"
+          :to="!item.subItems ? item.to : '#'"
+          :prepend-icon="item.action"
+          v-model="item.active"
+          no-action
+          active-class="red--text"
+        >
+          <template v-slot:activator>
+            <v-list-item-content>
+              <v-list-item-title v-text="item.title"></v-list-item-title>
+            </v-list-item-content>
+          </template>
+
+          <v-list-item
+            v-for="child in item.subItems"
+            :key="child.title"
+            :href="child.to"
+            :target="child.target"
+          >
+            <v-list-item-content>
+              <v-list-item-title v-text="child.title"></v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-group>
+
+        
       </v-list>
     </v-navigation-drawer>
 
@@ -266,45 +336,54 @@ export default {
       keyword: '',
       mainMenu: [
         {
-          icon: 'mdi-apps',
           title: "What's happening",
-          to: '/what-happend'
+          to: '/what-happening',
+          target: '_self'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Cuisine',
-          to: '/cuisine'
+          title: 'Hot Properties',
+          to: '/properties',
+          target: '_self',
+          subItems: [
+            {
+              title: 'Hotels',
+              to: '/hotel',
+              target: '_self'
+            },
+            {
+              title: 'Residential',
+              to: '/residential',
+              target: '_self'
+            }
+          ]
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Hot Hotels',
-          to: '/hotel'
-        },
-        {
-          icon: 'mdi-chart-bubble',
           title: 'Lifestyle',
-          to: '/lifestyle'
+          to: '/lifestyle',
+          target: '_self',
+          subItems: [
+            {
+             title: 'Cuisine',
+              to: '/cuisine',
+              target: '_self'
+            },
+            {
+              title: 'People',
+              to: '/people',
+              target: '_self'
+            },
+            {
+              title: 'Shopping',
+              to: '/shopping',
+              target: '_self'
+            },
+            {
+              title: 'Travel',
+              to: '/travel',
+              target: '_self'
+            }
+          ]
         },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Talk',
-          to: '/talk'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Properties',
-          to: '/properties'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Contact',
-          to: '/contact'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'About',
-          to: '/about'
-        }
       ],
       clipped: false,
       drawer: false,

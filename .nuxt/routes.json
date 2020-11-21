@@ -28,18 +28,18 @@
     "_name": "_1ad76d54"
   },
   {
-    "name": "index-two",
-    "path": "/index-two",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/index-two.vue",
-    "chunkName": "pages/index-two",
-    "_name": "_f4b908a4"
-  },
-  {
     "name": "lifestyle",
     "path": "/lifestyle",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle/index.vue",
     "chunkName": "pages/lifestyle/index",
     "_name": "_80553fd6"
+  },
+  {
+    "name": "people",
+    "path": "/people",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/people/index.vue",
+    "chunkName": "pages/people/index",
+    "_name": "_efe263f6"
   },
   {
     "name": "properties",
@@ -49,18 +49,11 @@
     "_name": "_426b2629"
   },
   {
-    "name": "talk",
-    "path": "/talk",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/talk/index.vue",
-    "chunkName": "pages/talk/index",
-    "_name": "_2f329aa2"
-  },
-  {
-    "name": "what-happend",
-    "path": "/what-happend",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/what-happend/index.vue",
-    "chunkName": "pages/what-happend/index",
-    "_name": "_20032ba2"
+    "name": "what-happening",
+    "path": "/what-happening",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/what-happening/index.vue",
+    "chunkName": "pages/what-happening/index",
+    "_name": "_10dbdfa6"
   },
   {
     "name": "X_slug",
@@ -70,18 +63,11 @@
     "_name": "_f89e7430"
   },
   {
-    "name": "what-happend-all",
-    "path": "/what-happend/*",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/what-happend/_.vue",
-    "chunkName": "pages/what-happend/_",
-    "_name": "_24014488"
-  },
-  {
-    "name": "talk-all",
-    "path": "/talk/*",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/talk/_.vue",
-    "chunkName": "pages/talk/_",
-    "_name": "_1eebbfaf"
+    "name": "what-happening-all",
+    "path": "/what-happening/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/what-happening/_.vue",
+    "chunkName": "pages/what-happening/_",
+    "_name": "_ee3c9a8c"
   },
   {
     "name": "properties-all",
@@ -89,6 +75,13 @@
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/properties/_.vue",
     "chunkName": "pages/properties/_",
     "_name": "_5ecd26b6"
+  },
+  {
+    "name": "people-all",
+    "path": "/people/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/people/_.vue",
+    "chunkName": "pages/people/_",
+    "_name": "_08571c92"
   },
   {
     "name": "lifestyle-all",
