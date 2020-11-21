@@ -53,10 +53,10 @@
   "LazyPeople": {
     "description": "Auto imported from components/Home/People.vue"
   },
-  "WhatHappend": {
-    "description": "Auto imported from components/Home/WhatHappend.vue"
+  "WhatHappening": {
+    "description": "Auto imported from components/Home/WhatHappening.vue"
   },
-  "LazyWhatHappend": {
-    "description": "Auto imported from components/Home/WhatHappend.vue"
+  "LazyWhatHappening": {
+    "description": "Auto imported from components/Home/WhatHappening.vue"
   }
 }

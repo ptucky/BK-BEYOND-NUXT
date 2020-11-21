@@ -147,16 +147,17 @@
           :key="i"
           offset-y
         >
-          <template v-slot:activator="{ attrs, on }">
+          <template v-slot:activator="{ on, attrs }">
             <v-btn text class="top-menu-dt" v-bind="attrs" v-on="on" :to="!item.subItems ? item.to : '#'">
               {{ item.title }}
               <v-icon dark v-if="item.subItems">arrow_drop_down</v-icon>
             </v-btn>
           </template>
+          
           <v-list v-if="item.subItems">
             <v-list-item
-              v-for="(child, i) in item.subItems"
-              :key="i"
+              v-for="(child, j) in item.subItems"
+              :key="j"
               :href="child.to"
               :target="child.target"
               link

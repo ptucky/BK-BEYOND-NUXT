@@ -32,7 +32,7 @@
       <div class="swiper-button-next hidden-lg-and-up" slot="button-next"></div>
     </div>
     
-    <WhatHappend />
+    <WhatHappening />
     <BannerOne />
     <LifeStyle />
     <People />
@@ -47,7 +47,7 @@ import { getPosts } from '~/api/posts';
 
 export default {
   components: {
-    WhatHappend: () => import('~/components/Home/WhatHappend.vue'),
+    WhatHappening: () => import('~/components/Home/WhatHappening.vue'),
     BannerOne: () => import('~/components/Home/BannerOne.vue'),
     LifeStyle: () => import('~/components/Home/LifeStyle.vue'),
     People: () => import('~/components/Home/People.vue'),

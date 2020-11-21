@@ -34,7 +34,7 @@ export default {
     data() {
         return {
           limitQuery: 6,
-          tagName: 'what-happend',
+          tagName: 'what-happening',
           pageTitle: "What's happening",
           tags: [],
         }

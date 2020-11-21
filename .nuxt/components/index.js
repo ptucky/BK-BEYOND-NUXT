@@ -7,7 +7,7 @@ export { default as BannerTwo } from '../../components/Home/BannerTwo.vue'
 export { default as HotHotel } from '../../components/Home/HotHotel.vue'
 export { default as LifeStyle } from '../../components/Home/LifeStyle.vue'
 export { default as People } from '../../components/Home/People.vue'
-export { default as WhatHappend } from '../../components/Home/WhatHappend.vue'
+export { default as WhatHappening } from '../../components/Home/WhatHappening.vue'
 
 export const LazyPostDetail = import('../../components/PostDetail.vue' /* webpackChunkName: "components/PostDetail" */).then(c => c.default || c)
 export const LazyTagsList = import('../../components/TagsList.vue' /* webpackChunkName: "components/TagsList" */).then(c => c.default || c)
@@ -18,4 +18,4 @@ export const LazyBannerTwo = import('../../components/Home/BannerTwo.vue' /* web
 export const LazyHotHotel = import('../../components/Home/HotHotel.vue' /* webpackChunkName: "components/Home/HotHotel" */).then(c => c.default || c)
 export const LazyLifeStyle = import('../../components/Home/LifeStyle.vue' /* webpackChunkName: "components/Home/LifeStyle" */).then(c => c.default || c)
 export const LazyPeople = import('../../components/Home/People.vue' /* webpackChunkName: "components/Home/People" */).then(c => c.default || c)
-export const LazyWhatHappend = import('../../components/Home/WhatHappend.vue' /* webpackChunkName: "components/Home/WhatHappend" */).then(c => c.default || c)
+export const LazyWhatHappening = import('../../components/Home/WhatHappening.vue' /* webpackChunkName: "components/Home/WhatHappening" */).then(c => c.default || c)
