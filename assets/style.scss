@@ -1,9 +1,10 @@
 $app-text-menu-color: #222 !important;
+$app-bar-mobile-bg-color: #333 !important;
 $app-bar-bg-color: #4F4D5F !important; /* #4F4D5F */ /* #e2e4eb*/
 $app-bar-newsletter-color: #5d4037 !important;
 
 #app-bar{ z-index: 1; }
-.app-bar-bg-color{background: $app-bar-bg-color;}
+.app-bar-bg-color{ background: $app-bar-mobile-bg-color;}
 .v-application ul, .v-application ol{ padding-left: 0 !important; }
 .top-newsletter{ color: #343f44; }
 .row-cover-box{ 
@@ -17,7 +18,6 @@ $app-bar-newsletter-color: #5d4037 !important;
 .theme--light.top-menu-dt:hover{ color: #FFF !important; background: $app-bar-bg-color; }
 .sign-newletter-header{
     margin-bottom: 3px !important;
-   
     a:hover{ 
         color: $app-bar-newsletter-color; 
         .v-icon{ color: $app-bar-newsletter-color; }
@@ -30,16 +30,21 @@ $app-bar-newsletter-color: #5d4037 !important;
 .sign-newletter-header.v-alert--dense{padding-bottom: 5px !important;}
 .v-alert--dense{padding-top: 5px !important;}
 .text-container{ font-size: 0.95rem; }
-
 .v-application .text-signup-newsletter{ font-size: 0.73rem !important; color: #F44336 !important; }
 .v-application .text-signup-newsletter:hover{ color: #FFF !important; background: #F44336; }
 
-h2.page-title{ font-size: 2.2rem; }
-h2.page-title a{ font-family: Kanit,sans-serif; text-decoration: none; color: #343f44 !important; }
+
+h2.page-title a{ font-family: Kanit,sans-serif; text-decoration: none; color: #444 !important; }
 h2.page-title a:hover{ color: #F44336 !important; }
 
-.home-head-title a:link, .home-head-title a:visited{ font-size: 1.2rem; text-decoration: none !important; color: #000 !important;}
+.home-head-title a:link, .home-head-title a:visited{ font-size: 1.2rem; text-decoration: none !important; color: #444 !important;}
 .home-head-title a:hover{ font-size: 1.2rem; text-decoration: underline; color: #F44336 !important; }
+.text-titile-link{ line-height: 1.2; }
+.view-all a:link{ text-decoration: none; }
+
+
+.swiper-pagination .swiper-pagination-bullet-active { background-color: #F44336 !important; }
+
 
 /* SEARCH */
 .ui-widget {
@@ -93,14 +98,19 @@ input.hideSearch:focus {
 /* END SEARCH */
 
 @media only screen and (max-width: 800px) {
-    // .v-toolbar__content{ height: 50px !important; }
+    h2.page-title{ font-size: 1.8rem; }
     #app-bar{ height: 55px !important; }
     #bkbeyond-logo{width:100px; padding-top:10px;}
     .expanded input {border: 0;width: 140px;}
     input.showSearch { width: 140px;}
+    .text-excert{ font-size: 0.9rem; line-height: 1.4; color: #777; }
+
 }
 @media only screen and (min-width: 801px) {
+    h2.page-title{ font-size: 2.2rem; }
     #bkbeyond-logo{width:130px; padding-top:15px;}
     .expanded input { border: 0; width: 180px;}
     input.showSearch { width: 180px;}
+    .text-excert{ font-size: 0.92rem; line-height: 1.4; color: #777; }
+
 }

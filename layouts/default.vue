@@ -3,8 +3,7 @@
     <v-alert
       dense
       text
-      color="blue-grey"
-      class="sign-newletter-header text-center"
+      class="sign-newletter-header text-center hidden-sm-and-down hidden-xs-only"
     >
       <v-dialog
         v-model="dialog"
@@ -58,7 +57,7 @@
               color="red"
               text
               @click="dialog = false">
-              Save
+              Send
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -326,7 +325,9 @@ export default {
           {
 
             document.getElementById('bkbeyond-logo').style.transition = '.2s'
-            document.querySelector('.theme--light.v-app-bar.v-toolbar.v-sheet').style.background = '#e2e4eb'
+            
+            document.querySelector('.theme--light.v-app-bar.v-toolbar.v-sheet').style.background = '#e2e4eb' //#e2e4eb
+
             document.getElementById('app-bar').style.position = 'fixed'
 
             if (checkDeveice == 'mobile_tablet') {

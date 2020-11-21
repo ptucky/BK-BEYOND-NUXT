@@ -9,7 +9,7 @@
     >
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(latest, i) in latestPosts" :key="i">
-          <div class="swiper-slide-img" :style="{ 'opacity': '0.9','width': '100%', 'background-image' : `url(${latest.feature_image})` }">
+          <div class="swiper-slide-img" :style="{'width': '100%', 'background-image' : `url(${latest.feature_image})` }">
             <div class="text-slide white--text" v-if="latest.title">
               <nuxt-link :to="{ path: latest.slug }">
                 <v-chip
@@ -102,30 +102,36 @@ export default {
 
 <style lang="scss" scoped>
 @media only screen and (max-width: 800px) {
-  .row-cover-box{ margin-top: -73px;}
+  .row-cover-box{ 
+    margin-top: -70px; 
+    .swiper-slide-img { opacity: 1; }
+  }
   .swiper, .swiper-slide-img {
-    height: 350px;
+    height: 380px;
   }
   .home-slide-image{ 
     margin-top: 0px;
     .text-slide {
-      padding: 0; margin: 0; margin-top: 20px; line-height: 0.8;
-      a:link, a:visited { color: #FFF; font-size: 1.2rem; font-weight: 500; background-color:rgb(0,0,0, 0.4); text-decoration: none; padding: 5px 10px;} 
+      padding: 0; margin: 0 5px; margin-top: 260px; line-height: 0.63;
+      a:link, a:visited { color: #FFF; font-size: 1.1rem; font-weight: 500; background-color:rgb(0,0,0, 0.4); text-decoration: none; padding: 5px 10px;} 
       a:hover { color: #FFF; background-color:rgb(0,0,0, 0.9);}
     }
   }
 }
 
 @media only screen and (min-width: 801px) {
-  .row-cover-box{ margin-top: -73px;}
+  .row-cover-box{ 
+    margin-top: -74px; 
+    .swiper-slide-img { opacity: 0.9; }
+  }
   .swiper, .swiper-slide-img {
     height: 80vh;
   }
   .home-slide-image{ 
     margin-top: 0px;
      .text-slide {
-      padding: 0; margin: 0; margin-top: 150px; line-height: 0.8; 
-      a:link, a:visited { color: #FFF; font-size: 2.4rem; font-weight: 500; background-color:rgb(0,0,0, 0.4); text-decoration: none; padding: 5px 10px;}
+      padding: 0; margin: 0 50px; margin-top: 60vh; line-height: 1.39; 
+      a:link, a:visited { color: #FFF; font-size: 2.2rem; font-weight: 500; background-color:rgb(0,0,0, 0.4); text-decoration: none; padding: 5px 10px;}
       a:hover { color: #FFF; background-color:rgb(0,0,0, 0.9);} 
     }
   }

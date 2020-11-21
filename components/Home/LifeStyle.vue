@@ -3,21 +3,20 @@
     <v-row>
       <v-col cols="12" sm="12" md="12" class="text-center">
         <h2 class="page-title">
-           <nuxt-link :to="{ path: tagName }" v-text="pageTitle">
-          </nuxt-link>
+           <nuxt-link :to="{ path: tagName }" v-text="pageTitle"></nuxt-link>
         </h2>
       </v-col>
       <v-col>
         <div v-swiper="swiperOption">
           <div class="swiper-wrapper">
             <div cols="12" sm="12" md="4" class="swiper-slide" v-for="(post, index) in tags" :key="index">
-              <h3 class="home-head-title">
+              <h3 class="home-head-title text-titile-link">
                 <nuxt-link :to="{ path: post.slug }">
                   <img :src="post.feature_image" class="img-post" :style="{ 'height' : '250px' }">
                   {{ post.title }}
                 </nuxt-link>
               </h3>
-              <div v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 200) + `...`"></div>
+              <p class="pt-2 text-excert" v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 200) + `...`"></p>
             </div>
           </div>
           <div class="swiper-pagination swiper-pagination-bullets"></div>
@@ -57,17 +56,17 @@ export default {
               // when window width is >= 320px
               320: {
                 slidesPerView: 1,
-                spaceBetween: 30
+                spaceBetween: 10
               },
               // when window width is >= 480px
-              // 480: {
-              //   slidesPerView: 1,
-              //   spaceBetween: 30
-              // },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 10
+              },
               // when window width is >= 640px
-              640: {
+              801: {
                 slidesPerView: 3,
-                spaceBetween: 30
+                spaceBetween: 10
               }
             }
           },
@@ -97,10 +96,25 @@ export default {
 
 <style lang="scss" scoped>
 .img-post{ width: 100%; }
-.swiper-slide {
-  transition: transform .2s;
+@media only screen and (max-width: 800px) 
+{
+  img {
+    opacity: 1;
+  }
 }
-.swiper-slide:hover{
-  transform: scale(1.03);
+@media only screen and (min-width: 801px) 
+{
+  .swiper-slide {
+    transition: transform .2s;
+    img {
+      opacity: 0.85;
+    }
+  }
+  .swiper-slide:hover{
+    transform: scale(1.03);
+    img:hover {
+      opacity: 1;
+    }
+  }
 }
 </style>

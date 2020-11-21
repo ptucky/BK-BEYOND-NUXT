@@ -3,8 +3,7 @@
     <v-row>
       <v-col cols="12" sm="12" md="12" class="text-center">
         <h2 class="page-title">
-          <nuxt-link :to="{ path: tagName }" v-text="pageTitle">
-          </nuxt-link>
+          <nuxt-link :to="{ path: tagName }" v-text="pageTitle"></nuxt-link>
         </h2>
       </v-col>
       <v-col cols="12" sm="12" md="8">
@@ -13,7 +12,7 @@
             class="mx-auto image-card mb-4"
             v-for="(post, index) in tags" :key="index"
           >
-            <h3 class="home-head-title">
+            <h3 class="home-head-title text-titile-link">
               <nuxt-link :to="{ path: post.slug }">
                 <img :src="post.feature_image" class="img-post" :style="{ 'height': '220px'}">
                 <div class="pl-2 pr-2">{{ post.title }}</div>
@@ -23,11 +22,11 @@
           </v-card>
         </v-row>
         <v-spacer />
-        <div class="pt-5 text-center">
+        <div class="pt-5 text-center view-all">
           <nuxt-link :to="{ path: tagName }">
             <v-btn
               rounded
-              color="primary"
+              color="red"
               dark
             >
               View all {{ pageTitle }}
@@ -74,10 +73,21 @@ export default {
 
 <style lang="scss" scoped>
 .img-post{ width: 100%; }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) 
+{
   .image-card{ width: 95%; }
+  img {
+    opacity: 1;
+  }
 }
-@media only screen and (min-width: 801px) {
+@media only screen and (min-width: 801px) 
+{
   .image-card{ width: 360px; }
+  img {
+    opacity: 0.85;
+  }
+  img:hover {
+    opacity: 1;
+  }
 }
 </style>

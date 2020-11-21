@@ -18,33 +18,31 @@
         </v-row>
       </v-col>
       <v-col cols="12" sm="12" md="3" :style="{'background': '#f2f2f2'}">
-        <v-row class="pt-4 pr-2">
-          <h3 class="home-head-title">
+        <v-row class="pt-4 hotel-cover-box-show">
+          <h3 class="home-head-title text-titile-link">
             <nuxt-link :to="{ path: tagsOne.slug }" :style="{'text-decoration': 'none'}">
               {{ tagsOne.title }}
             </nuxt-link>
           </h3>
-          <p class="text-left" v-if="tagsOne.excerpt" v-text="tagsOne.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 350) + `...`"></p>
+          <p class="hotel-excerpt text-left" v-if="tagsOne.excerpt" v-text="tagsOne.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 350) + `...`"></p>
         </v-row>
       </v-col>
-
       <v-col cols="12" sm="12" md="4" class="text-center">
         <BannerThree />
       </v-col>
     </v-row>
-
     <v-row>
       <v-col class="mx-auto image-card">
         <div v-swiper="swiperOption">
           <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="(post, index) in tags.slice(1, 6)" :key="index">
-              <h3 class="home-head-title">
+              <h3 class="home-head-title text-titile-link">
                 <nuxt-link :to="{ path: tagsOne.slug }">
                   <img :src="post.feature_image" class="img-post" :style="{ 'height' : '250px' }">
                   {{ post.title }}
                 </nuxt-link>
               </h3>
-              <div v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 200) + `...`"></div>
+              <p class="pt-2 text-excert" v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 200) + `...`"></p>
             </div>
           </div>
           <div class="swiper-pagination swiper-pagination-bullets"></div>
@@ -88,17 +86,17 @@ export default {
               // when window width is >= 320px
               320: {
                 slidesPerView: 1,
-                spaceBetween: 30
+                spaceBetween: 10
               },
               // when window width is >= 480px
-              // 480: {
-              //   slidesPerView: 1,
-              //   spaceBetween: 30
-              // },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 10
+              },
               // when window width is >= 640px
-              640: {
+              801: {
                 slidesPerView: 3,
-                spaceBetween: 30
+                spaceBetween: 10
               }
             }
           },
@@ -125,16 +123,32 @@ export default {
 
 <style lang="scss" scoped>
 .img-post{ width: 100%; }
+.hotel-cover-box-show 
+{
+  .home-head-title{ padding: 5px 10px;}
+  .hotel-excerpt{ padding: 5px 10px; font-size: 0.92rem;}
+}
+
 @media only screen and (max-width: 800px) {
   .image-card{ width: 95%; }
+  img {
+      opacity: 1;
+  }
 }
+
 @media only screen and (min-width: 801px) {
   .image-card{ width: 360px; }
-}
-.swiper-slide{
-  transition: transform .2s;
-}
-.swiper-slide:hover{
-  transform: scale(1.03);
+  .swiper-slide{
+    transition: transform .2s;
+    img {
+      opacity: 0.85;
+    }
+  }
+  .swiper-slide:hover{
+    transform: scale(1.03);
+    img:hover {
+      opacity: 1;
+    }
+  }
 }
 </style>
