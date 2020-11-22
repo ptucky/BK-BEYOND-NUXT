@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="12" sm="12" md="12" class="text-center">
         <h2 class="page-title">
-          <nuxt-link :to="{ path: tagName }" v-text="pageTitle"></nuxt-link>
+          <nuxt-link :to="{ path: tagPathName }" v-text="pageTitle"></nuxt-link>
         </h2>
       </v-col>
       <v-col cols="12" sm="12" md="8">
@@ -13,7 +13,7 @@
             v-for="(post, index) in tags" :key="index"
           >
             <h3 class="home-head-title text-titile-link">
-              <nuxt-link :to="{ path: tagName + '/' + post.slug }">
+              <nuxt-link :to="{ path: tagPathName + '/' + post.slug }">
                 <img :src="post.feature_image" class="img-post" :style="{ 'height': '200px'}">
                 <div class="pl-3 pr-3 pt-2">{{ post.title }}</div>
               </nuxt-link>
@@ -55,6 +55,7 @@ export default {
         return {
             pageTitle: "People",
             tagName: 'people',
+            tagPathName: 'lifestyle/people',
             limitQuery: 4,
             tags: [],
         }

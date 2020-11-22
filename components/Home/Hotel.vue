@@ -3,14 +3,14 @@
     <v-row>
       <v-col cols="12" sm="12" md="12" class="text-center">
         <h2 class="page-title">
-          <nuxt-link :to="{ path: tagName }" v-text="pageTitle">
+          <nuxt-link :to="{ path: tagPathName }" v-text="pageTitle">
           </nuxt-link>
         </h2>
       </v-col>
       <v-col cols="12" sm="12" md="5" :style="{'background': '#f2f2f2'}">
         <v-row class="pt-3">
           <v-col class="mx-auto image-card home-head-title">
-            <nuxt-link :to="{ path: tagName + '/' + tagsOne.slug }">
+            <nuxt-link :to="{ path: tagPathName + '/' + tagsOne.slug }">
               <img :src="tagsOne.feature_image" class="img-post hotel-feature-image">
             </nuxt-link>
           </v-col>
@@ -19,7 +19,7 @@
       <v-col cols="12" sm="12" md="3" :style="{'background': '#f2f2f2'}">
         <v-row class="pt-4 hotel-cover-box-show">
           <h3 class="home-head-title text-titile-link">
-            <nuxt-link :to="{ path:  tagName + '/' +  tagsOne.slug }" :style="{'text-decoration': 'none'}">
+            <nuxt-link :to="{ path: tagPathName + '/' +  tagsOne.slug }" :style="{'text-decoration': 'none'}">
               {{ tagsOne.title }}
             </nuxt-link>
           </h3>
@@ -36,7 +36,7 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="(post, index) in tags.slice(1, 6)" :key="index">
               <h3 class="home-head-title text-titile-link">
-                <nuxt-link :to="{ path: tagName + '/' +  post.slug }">
+                <nuxt-link :to="{ path: tagPathName + '/' +  post.slug }">
                   <img :src="post.feature_image" class="img-post" :style="{ 'height' : '230px' }">
                   {{ post.title }}
                 </nuxt-link>
@@ -66,6 +66,7 @@ export default {
     return {
       pageTitle: "Hot Hotels",
       tagName: 'hotel',
+      tagPathName: 'properties/hotel',
       limitQuery: 6,
       tags: [],
       tagsOne: [],

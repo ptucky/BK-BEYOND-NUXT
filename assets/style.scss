@@ -5,7 +5,6 @@ $app-bar-newsletter-color: #4F4D5F !important;
 $menu-text-red: #d32f2f !important;
 
 #app-bar{ z-index: 2; }
-.app-bar-bg-color{ background: $app-bar-mobile-bg-color;}
 .v-application ul, .v-application ol{ padding-left: 0 !important; }
 .top-newsletter{ color: #343f44; }
 .row-cover-box{ 
@@ -34,11 +33,9 @@ $menu-text-red: #d32f2f !important;
 
 .theme--light.top-menu-dt{ color: $app-text-menu-color; font-size: 0.875rem !important; }
 .theme--light.top-menu-dt:hover{ color: #ffffff !important; background: #d32f2f !important; }
-
 .theme--light.v-btn--active::before {
     opacity: 0 !important;
 }
-
 
 .sign-newletter-header.v-alert--dense{padding-bottom: 5px !important;}
 .v-alert--dense{padding-top: 5px !important;}

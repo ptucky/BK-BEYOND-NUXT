@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="12" sm="12" md="12" class="text-center">
         <h2 class="page-title">
-           <nuxt-link :to="{ path: tagName }" v-text="pageTitle"></nuxt-link>
+           <nuxt-link :to="{ path: tagPathName }" v-text="pageTitle"></nuxt-link>
         </h2>
       </v-col>
       <v-col>
@@ -11,7 +11,7 @@
           <div class="swiper-wrapper">
             <div cols="12" sm="12" md="4" class="swiper-slide" v-for="(post, index) in tags" :key="index">
               <h3 class="home-head-title text-titile-link">
-                <nuxt-link :to="{ path:  tagName + '/' + post.slug }">
+                <nuxt-link :to="{ path: tagPathName + '/' + post.slug }">
                   <img :src="post.feature_image" class="img-post" :style="{ 'height' : '250px' }">
                   {{ post.title }}
                 </nuxt-link>
@@ -36,6 +36,7 @@ export default {
         return {
           pageTitle: 'Travel',
           tagName: 'travel',
+          tagPathName: 'lifestyle/travel',
           limitQuery: 6,
           tags: [],
           swiperOption: {

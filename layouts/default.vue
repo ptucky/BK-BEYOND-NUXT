@@ -235,11 +235,58 @@
       :right="right"
       temporary
       fixed
-      width="70%"
-      class="app-bar-bg-color"
-      dark
+      width="100%"
     >
+      <v-icon
+        large
+        color="brown"
+        v-ripple
+        @click.stop="rightDrawer = !rightDrawer"
+      >
+        mdi-close-box
+      </v-icon>
+
       <v-list>
+        <v-list-item
+          v-for="(item, i) in mainMenu" v-if="!item.subItems"
+          :key="i"
+          :to="!item.subItems ? item.to : '#'"
+          router
+          exact
+          active-class="red--text"
+      
+        >
+          <v-list-item-content>
+            <v-list-item-title v-text="item.title" class="text-left" />
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-group
+          v-for="(item, i) in mainMenu" v-if="item.subItems"
+          :key="i"
+          :to="!item.subItems ? item.to : '#'"
+          v-model="item.active"
+          no-action
+          active-class="red--text"
+        >
+          <template v-slot:activator>
+            <v-list-item-content>
+              <v-list-item-title v-text="item.title"></v-list-item-title>
+            </v-list-item-content>
+          </template>
+
+          <v-list-item
+            v-for="child in item.subItems"
+            :key="child.title"
+            :href="`${item.to}${child.to}`"
+            :target="child.target"
+          >
+            <v-list-item-content>
+              <v-list-item-title v-text="child.title"></v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-group>
+
         <v-list-item> 
           <v-list-item-content>
             <v-list-item-title>
@@ -275,49 +322,6 @@
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-
-        <v-list-item
-          v-for="(item, i) in mainMenu" v-if="!item.subItems"
-          :key="i"
-          :to="!item.subItems ? item.to : '#'"
-          router
-          exact
-          active-class="red--text"
-      
-        >
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" class="text-left" />
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-list-group
-          v-for="(item, i) in mainMenu" v-if="item.subItems"
-          :key="i"
-          :to="!item.subItems ? item.to : '#'"
-          :prepend-icon="item.action"
-          v-model="item.active"
-          no-action
-          active-class="red--text"
-        >
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title v-text="item.title"></v-list-item-title>
-            </v-list-item-content>
-          </template>
-
-          <v-list-item
-            v-for="child in item.subItems"
-            :key="child.title"
-            :href="child.to"
-            :target="child.target"
-          >
-            <v-list-item-content>
-              <v-list-item-title v-text="child.title"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
-
-        
       </v-list>
     </v-navigation-drawer>
 
@@ -373,6 +377,7 @@ export default {
           title: 'Lifestyle',
           to: '/lifestyle',
           target: '_self',
+          active: false,
           subItems: [
             {
              title: 'Cuisine',
@@ -398,12 +403,12 @@ export default {
         },
       ],
       clipped: false,
-      drawer: false,
+      rightDrawer: false, //navigation menu
       fixed: false,
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      dialog: false,
+      dialog: false
     }
   },
   mounted() {
