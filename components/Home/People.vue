@@ -53,9 +53,9 @@ export default {
     },
     data() {
         return {
-            limitQuery: 4,
-            tagName: 'people',
             pageTitle: "People",
+            tagName: 'people',
+            limitQuery: 4,
             tags: [],
         }
     },

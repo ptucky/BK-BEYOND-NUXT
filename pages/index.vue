@@ -34,9 +34,9 @@
     
     <WhatHappening />
     <BannerOne />
-    <LifeStyle />
+    <Cuisine />
     <People />
-    <HotHotel />
+    <Hotel />
     <BannerFour />
 
   </v-row>
@@ -49,9 +49,9 @@ export default {
   components: {
     WhatHappening: () => import('~/components/Home/WhatHappening.vue'),
     BannerOne: () => import('~/components/Home/BannerOne.vue'),
-    LifeStyle: () => import('~/components/Home/LifeStyle.vue'),
+    Cuisine: () => import('~/components/Home/Cuisine.vue'),
     People: () => import('~/components/Home/People.vue'),
-    HotHotel: () => import('~/components/Home/HotHotel.vue'),
+    Hotel: () => import('~/components/Home/Hotel.vue'),
     BannerFour: () => import('~/components/Home/BannerFour.vue'),
   },
   data () {

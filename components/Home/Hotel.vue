@@ -3,15 +3,41 @@
     <v-row>
       <v-col cols="12" sm="12" md="12" class="text-center">
         <h2 class="page-title">
-           <nuxt-link :to="{ path: tagName }" v-text="pageTitle"></nuxt-link>
+          <nuxt-link :to="{ path: tagName }" v-text="pageTitle">
+          </nuxt-link>
         </h2>
       </v-col>
-      <v-col>
+      
+      <v-col cols="12" sm="12" md="5" :style="{'background': '#f2f2f2'}">
+        <v-row class="pt-3">
+          <v-col class="mx-auto image-card home-head-title">
+            <nuxt-link :to="{ path: tagName + '/' + tagsOne.slug }">
+              <img :src="tagsOne.feature_image" class="img-post" :style="{ 'height' : '300px' }">
+            </nuxt-link>
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col cols="12" sm="12" md="3" :style="{'background': '#f2f2f2'}">
+        <v-row class="pt-4 hotel-cover-box-show">
+          <h3 class="home-head-title text-titile-link">
+            <nuxt-link :to="{ path:  tagName + '/' +  tagsOne.slug }" :style="{'text-decoration': 'none'}">
+              {{ tagsOne.title }}
+            </nuxt-link>
+          </h3>
+          <p class="hotel-excerpt text-left" v-if="tagsOne.excerpt" v-text="tagsOne.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 350) + `...`"></p>
+        </v-row>
+      </v-col>
+      <v-col cols="12" sm="12" md="4" class="text-center">
+        <BannerThree />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col class="mx-auto image-card">
         <div v-swiper="swiperOption">
           <div class="swiper-wrapper">
-            <div cols="12" sm="12" md="4" class="swiper-slide" v-for="(post, index) in tags" :key="index">
+            <div class="swiper-slide" v-for="(post, index) in tags.slice(1, 6)" :key="index">
               <h3 class="home-head-title text-titile-link">
-                <nuxt-link :to="{ path:  tagName + '/' + post.slug }">
+                <nuxt-link :to="{ path: tagName + '/' +  post.slug }">
                   <img :src="post.feature_image" class="img-post" :style="{ 'height' : '250px' }">
                   {{ post.title }}
                 </nuxt-link>
@@ -23,8 +49,9 @@
           <!-- <div class="swiper-button-prev" slot="button-prev"></div>
           <div class="swiper-button-next" slot="button-next"></div> -->
         </div>
-      </v-col>
+      </v-col> 
     </v-row>
+    
   </v-container>
 </template>
 
@@ -33,9 +60,17 @@
 import { getTags } from '~/api/posts';
 
 export default {
-    name: "LifeStyle",
+    name: "Hotel",
+    components: {
+      BannerThree: () => import('~/components/Home/BannerThree.vue'),
+    },
     data() {
         return {
+          pageTitle: "Hot Hotels",
+          tagName: 'hotel',
+          limitQuery: 6,
+          tags: [],
+          tagsOne: [],
           swiperOption: {
             autoplay: {
               delay: 3500,
@@ -70,41 +105,40 @@ export default {
               }
             }
           },
-          limitQuery: 6,
-          tagName: 'lifestyle',
-          pageTitle: 'Life Style',
-          tags: [],
         }
     },
     mounted() {
         this.asyncData(this.tagName, this.limitQuery)
     },
     methods: {
-        beautyFullDate(val) {
-            let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            let date = new Date(val);
-            let fullDate = monthNames[(date.getMonth()+1)] + " " + date.getDate().toString() + ", " + date.getFullYear().toString()
-            return fullDate
-        },
-        async asyncData (key, limit) {
-            const tag = await getTags(key, limit)
-            this.tags = tag
-        },
+      async asyncData (key, limit) {
+          const tag = await getTags(key, limit)
+          this.tags = tag
+          this.tagsOne = tag[0]
+    
+      }
     }
 }
 </script>
 
 <style lang="scss" scoped>
 .img-post{ width: 100%; }
-@media only screen and (max-width: 800px) 
+.hotel-cover-box-show 
 {
+  .home-head-title{ padding: 5px 10px;}
+  .hotel-excerpt{ padding: 5px 10px; font-size: 0.92rem;}
+}
+
+@media only screen and (max-width: 800px) {
+  .image-card{ width: 95%; }
   img {
-    opacity: 1;
+      opacity: 1;
   }
 }
-@media only screen and (min-width: 801px) 
-{
-  .swiper-slide {
+
+@media only screen and (min-width: 801px) {
+  .image-card{ width: 360px; }
+  .swiper-slide{
     transition: transform .2s;
     img {
       opacity: 0.9;

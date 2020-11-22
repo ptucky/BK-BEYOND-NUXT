@@ -54,14 +54,14 @@ export async function getPage(pageSlug)
 export async function getTags(tagName, limit) 
 {
     let limitPage = (limit && limit > 1)? limit : "all"
-    let includeAuthor = (tagName == "talk")? "authors" : "none"
+    let includeAuthor = (tagName == "people")? "authors" : "none"
 
     return await api.posts.browse(
         {
             //include: "tags,authors",
             limit: limitPage,
             include: includeAuthor,
-            filter: "tag:" + `${tagName}`,
+            filter: `tag: ${tagName}`,
             order: "published_at DESC"
         }
     )
@@ -70,4 +70,27 @@ export async function getTags(tagName, limit)
     });
 }
 
+export async function getTagsMain(tagNameArr, limit) 
+{
+    let limitPage = (limit && limit > 1)? limit : "all"
+    let includeAuthor = "authors" //[authors, tags]
 
+    return await api.posts.browse(
+        {
+            //include: "tags,authors",
+            limit: limitPage,
+            include: includeAuthor,
+            filter: `tag: [${tagNameArr}]`,
+            order: "published_at DESC"
+        }
+    )
+    // .then((posts) => {
+    //     // Do any
+    //     // posts.forEach((post) => {
+    //     //     console.log(post.title);
+    //     // });
+    // })
+    .catch(err => {
+        console.error(err);
+    });
+}

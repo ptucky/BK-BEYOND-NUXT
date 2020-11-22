@@ -3,96 +3,133 @@
     "name": "about",
     "path": "/about",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/about/index.vue",
-    "chunkName": "pages/about/index"
+    "chunkName": "pages/about/index",
+    "_name": "_b175d826"
   },
   {
     "name": "contact",
     "path": "/contact",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/contact/index.vue",
-    "chunkName": "pages/contact/index"
-  },
-  {
-    "name": "cuisine",
-    "path": "/cuisine",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/cuisine/index.vue",
-    "chunkName": "pages/cuisine/index"
-  },
-  {
-    "name": "hotel",
-    "path": "/hotel",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/hotel/index.vue",
-    "chunkName": "pages/hotel/index"
+    "chunkName": "pages/contact/index",
+    "_name": "_9eeb2900"
   },
   {
     "name": "lifestyle",
     "path": "/lifestyle",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle/index.vue",
-    "chunkName": "pages/lifestyle/index"
-  },
-  {
-    "name": "people",
-    "path": "/people",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/people/index.vue",
-    "chunkName": "pages/people/index"
+    "chunkName": "pages/lifestyle/index",
+    "_name": "_80553fd6"
   },
   {
     "name": "properties",
     "path": "/properties",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/properties/index.vue",
-    "chunkName": "pages/properties/index"
+    "chunkName": "pages/properties/index",
+    "_name": "_426b2629"
   },
   {
     "name": "what-happening",
     "path": "/what-happening",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/what-happening/index.vue",
-    "chunkName": "pages/what-happening/index"
+    "chunkName": "pages/what-happening/index",
+    "_name": "_10dbdfa6"
   },
   {
-    "name": "X_slug",
-    "path": "/X_slug",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/X_slug/index.vue",
-    "chunkName": "pages/X_slug/index"
+    "name": "lifestyle-cuisine",
+    "path": "/lifestyle/cuisine",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle/cuisine/index.vue",
+    "chunkName": "pages/lifestyle/cuisine/index",
+    "_name": "_367a1bec"
+  },
+  {
+    "name": "lifestyle-people",
+    "path": "/lifestyle/people",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle/people/index.vue",
+    "chunkName": "pages/lifestyle/people/index",
+    "_name": "_d732e242"
+  },
+  {
+    "name": "lifestyle-shopping",
+    "path": "/lifestyle/shopping",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle/shopping/index.vue",
+    "chunkName": "pages/lifestyle/shopping/index",
+    "_name": "_09a9ad90"
+  },
+  {
+    "name": "lifestyle-travel",
+    "path": "/lifestyle/travel",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle/travel/index.vue",
+    "chunkName": "pages/lifestyle/travel/index",
+    "_name": "_77ae2cac"
+  },
+  {
+    "name": "properties-hotel",
+    "path": "/properties/hotel",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/properties/hotel/index.vue",
+    "chunkName": "pages/properties/hotel/index",
+    "_name": "_95c5df64"
+  },
+  {
+    "name": "properties-residential",
+    "path": "/properties/residential",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/properties/residential/index.vue",
+    "chunkName": "pages/properties/residential/index",
+    "_name": "_bb6c5344"
+  },
+  {
+    "name": "properties-residential-all",
+    "path": "/properties/residential/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/properties/residential/_.vue",
+    "chunkName": "pages/properties/residential/_",
+    "_name": "_00e38d2a"
+  },
+  {
+    "name": "properties-hotel-all",
+    "path": "/properties/hotel/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/properties/hotel/_.vue",
+    "chunkName": "pages/properties/hotel/_",
+    "_name": "_7d6beb5b"
+  },
+  {
+    "name": "lifestyle-travel-all",
+    "path": "/lifestyle/travel/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle/travel/_.vue",
+    "chunkName": "pages/lifestyle/travel/_",
+    "_name": "_2332d2b7"
+  },
+  {
+    "name": "lifestyle-shopping-all",
+    "path": "/lifestyle/shopping/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle/shopping/_.vue",
+    "chunkName": "pages/lifestyle/shopping/_",
+    "_name": "_5121ed76"
+  },
+  {
+    "name": "lifestyle-people-all",
+    "path": "/lifestyle/people/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle/people/_.vue",
+    "chunkName": "pages/lifestyle/people/_",
+    "_name": "_87d54b28"
+  },
+  {
+    "name": "lifestyle-cuisine-all",
+    "path": "/lifestyle/cuisine/*",
+    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle/cuisine/_.vue",
+    "chunkName": "pages/lifestyle/cuisine/_",
+    "_name": "_47e00b17"
   },
   {
     "name": "what-happening-all",
     "path": "/what-happening/*",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/what-happening/_.vue",
-    "chunkName": "pages/what-happening/_"
-  },
-  {
-    "name": "properties-all",
-    "path": "/properties/*",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/properties/_.vue",
-    "chunkName": "pages/properties/_"
-  },
-  {
-    "name": "people-all",
-    "path": "/people/*",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/people/_.vue",
-    "chunkName": "pages/people/_"
-  },
-  {
-    "name": "lifestyle-all",
-    "path": "/lifestyle/*",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/lifestyle/_.vue",
-    "chunkName": "pages/lifestyle/_"
-  },
-  {
-    "name": "hotel-all",
-    "path": "/hotel/*",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/hotel/_.vue",
-    "chunkName": "pages/hotel/_"
-  },
-  {
-    "name": "cuisine-all",
-    "path": "/cuisine/*",
-    "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/cuisine/_.vue",
-    "chunkName": "pages/cuisine/_"
+    "chunkName": "pages/what-happening/_",
+    "_name": "_ee3c9a8c"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/pravee/WWW_WORK/WWW_BK-BEYOND/www_nuxt/BK-BEYOND-NUXT/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_b34d80a2"
   }
 ]

@@ -11,6 +11,12 @@
   "LazyTagsList": {
     "description": "Auto imported from components/TagsList.vue"
   },
+  "TagsListMain": {
+    "description": "Auto imported from components/TagsListMain.vue"
+  },
+  "LazyTagsListMain": {
+    "description": "Auto imported from components/TagsListMain.vue"
+  },
   "BannerFour": {
     "description": "Auto imported from components/Home/BannerFour.vue"
   },
@@ -35,23 +41,29 @@
   "LazyBannerTwo": {
     "description": "Auto imported from components/Home/BannerTwo.vue"
   },
-  "HotHotel": {
-    "description": "Auto imported from components/Home/HotHotel.vue"
+  "Cuisine": {
+    "description": "Auto imported from components/Home/Cuisine.vue"
   },
-  "LazyHotHotel": {
-    "description": "Auto imported from components/Home/HotHotel.vue"
+  "LazyCuisine": {
+    "description": "Auto imported from components/Home/Cuisine.vue"
   },
-  "LifeStyle": {
-    "description": "Auto imported from components/Home/LifeStyle.vue"
+  "Hotel": {
+    "description": "Auto imported from components/Home/Hotel.vue"
   },
-  "LazyLifeStyle": {
-    "description": "Auto imported from components/Home/LifeStyle.vue"
+  "LazyHotel": {
+    "description": "Auto imported from components/Home/Hotel.vue"
   },
   "People": {
     "description": "Auto imported from components/Home/People.vue"
   },
   "LazyPeople": {
     "description": "Auto imported from components/Home/People.vue"
+  },
+  "Travel": {
+    "description": "Auto imported from components/Home/Travel.vue"
+  },
+  "LazyTravel": {
+    "description": "Auto imported from components/Home/Travel.vue"
   },
   "WhatHappening": {
     "description": "Auto imported from components/Home/WhatHappening.vue"

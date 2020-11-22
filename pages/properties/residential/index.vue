@@ -1,18 +1,17 @@
 <template>
   <v-container class="grey--text text--darken-2 text-container">  
-    <TagsListMain :pageName="pageName" :childTag="childTag" />
+    <TagsList :pageName="pageName" />
   </v-container>
 </template>
 
 <script>
 export default {
     components: {
-      TagsListMain: () => import('~/components/TagsListMain.vue'),
+      TagsList: () => import('~/components/TagsList.vue'),
     },
     data() {
       return {
-        pageName: "properties",
-        childTag: ["hotel","residential"]
+        pageName: "residential",
       }
     }
 }

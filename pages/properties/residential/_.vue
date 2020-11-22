@@ -1,7 +1,6 @@
 <template>
   <v-container class="grey--text text--darken-2 text-container">
     <v-row class="row-cover-box" justify="center">
-      ++ _slug/index ++
       <PostDetailView v-if="post" :postData="post" />
     </v-row>
   </v-container>
@@ -22,31 +21,10 @@ export default {
     },
     async asyncData ({params}) {    
       // call component for single post 
-      const post = await getPostDetail(params.slug)
+      //const post = await getPostDetail(params.slug)
+      const post = await getPostDetail(params.pathMatch)
       return { post: post }
-      
-      /*
-      if(params.slug === "what-happending" ||
-        params.slug === "cuisine" || 
-        params.slug === "hotel" ||
-        params.slug === "lifestyle" ||
-        params.slug === "talk" ||
-        params.slug === "properties"
-      )
-      {
-
-        // call component for tag 
-        const tags = await getTags(params.slug)
-        return { tags: tags }
-
-      } else {
-
-        // call component for single post 
-        const post = await getPostDetail(params.slug)
-        return { post: post }
-
-      }
-      */
+    
     },
     methods: {
 

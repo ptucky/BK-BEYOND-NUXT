@@ -142,7 +142,6 @@
         class="hidden-sm-and-down hidden-xs-only"
         id="app-bar-tab"
       >
-
         <v-menu
           v-for="(item, i) in mainMenu"
           :key="i"
@@ -173,7 +172,7 @@
             <v-list-item
               v-for="(child, j) in item.subItems"
               :key="j"
-              :href="child.to"
+              :href="`${item.to}${child.to}`"
               :target="child.target"
               link
             >
