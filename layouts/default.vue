@@ -142,19 +142,34 @@
         class="hidden-sm-and-down hidden-xs-only"
         id="app-bar-tab"
       >
+
         <v-menu
           v-for="(item, i) in mainMenu"
           :key="i"
           offset-y
         >
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn text class="top-menu-dt" v-bind="attrs" v-on="on" :to="!item.subItems ? item.to : '#'">
+          <template v-slot:activator="{ attrs, on }">
+            <v-btn
+              class="top-menu-dt"
+              text
+              v-if="!item.subItems"
+              :to="item.to"
+              :target="item.target"
+            >
+              {{ item.title }}
+            </v-btn>
+            <v-btn
+              class="top-menu-dt"
+              text
+              v-bind="attrs"
+              v-on="on"
+              v-if="item.subItems"
+            >
               {{ item.title }}
               <v-icon dark v-if="item.subItems">arrow_drop_down</v-icon>
             </v-btn>
           </template>
-          
-          <v-list v-if="item.subItems">
+          <v-list>
             <v-list-item
               v-for="(child, j) in item.subItems"
               :key="j"
@@ -162,7 +177,7 @@
               :target="child.target"
               link
             >
-              <v-list-item-title v-text="child.title" />
+              <v-list-item-title v-text="child.title"></v-list-item-title>
             </v-list-item>
           </v-list>
         </v-menu>
