@@ -14,11 +14,11 @@
           >
             <h3 class="home-head-title text-titile-link">
               <nuxt-link :to="{ path: tagName + '/' + post.slug }">
-                <img :src="post.feature_image" class="img-post" :style="{ 'height': '220px'}">
-                <div class="pl-2 pr-2">{{ post.title }}</div>
+                <img :src="post.feature_image" class="img-post" :style="{ 'height': '200px'}">
+                <div class="pl-3 pr-3 pt-2">{{ post.title }}</div>
               </nuxt-link>
             </h3>
-            <v-card-text v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 250) + `...`"></v-card-text>
+            <v-card-text v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 170) + `...`"></v-card-text>
           </v-card>
         </v-row>
         <v-spacer />

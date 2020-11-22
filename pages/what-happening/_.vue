@@ -1,9 +1,5 @@
 <template>
-  <v-container class="grey--text text--darken-2 text-container">
-    <v-row class="row-cover-box" justify="center">
-      <PostDetailView v-if="post" :postData="post" />
-    </v-row>
-  </v-container>
+  <PostDetailView v-if="post" :postData="post" />
 </template>
 
 <script>

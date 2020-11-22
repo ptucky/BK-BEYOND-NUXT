@@ -14,7 +14,7 @@
               {{ post.title }}
             </nuxt-link>
           </h3>
-          <p class="pt-2 text-excert" v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 250) + `...`"></p>
+          <p class="pt-2 text-excert" v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 200) + `...`"></p>
           <v-spacer>
             <!-- <small class="blue-grey--text text--lighten-2">{{ beautyFullDate(post.updated_at) }}</small> -->
             <!-- <small class="blue-grey--text text--lighten-2" v-text="`by ${post.authors[0].name}`"></small> -->

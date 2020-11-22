@@ -225,13 +225,11 @@
         mdi-menu
       </v-icon>
     </v-app-bar>
-
-    <v-container fluid>
-      <v-main class="grey--text text--darken-2 text-container" style="margin-top: -5px;">
-        <nuxt />
-      </v-main>
-    </v-container>
-  
+    
+    <v-main class="grey--text text--darken-2 text-container">
+      <nuxt />
+    </v-main>
+    
     <v-navigation-drawer
       v-model="rightDrawer"
       :right="right"

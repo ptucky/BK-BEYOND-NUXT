@@ -32,8 +32,13 @@ $menu-text-red: #d32f2f !important;
     a:hover{ color: #F44336 !important;}
 }
 
-.theme--light.top-menu-dt{ color: $app-text-menu-color; font-size: 0.95rem !important; }
+.theme--light.top-menu-dt{ color: $app-text-menu-color; font-size: 0.875rem !important; }
 .theme--light.top-menu-dt:hover{ color: #ffffff !important; background: #d32f2f !important; }
+
+.theme--light.v-btn--active::before {
+    opacity: 0 !important;
+}
+
 
 .sign-newletter-header.v-alert--dense{padding-bottom: 5px !important;}
 .v-alert--dense{padding-top: 5px !important;}
@@ -41,8 +46,8 @@ $menu-text-red: #d32f2f !important;
 .v-application .text-signup-newsletter{ font-size: 0.73rem !important; color: #9e9e9e !important; }
 .v-application .text-signup-newsletter:hover{ color: #FFF !important; background: $app-bar-newsletter-color; }
 
-h2.page-title a{ font-family: Kanit,sans-serif; text-decoration: none; color: #444 !important; }
-h2.page-title a:hover{ color: $menu-text-red; }
+h2.page-title a, h2.post-title a{ font-family: Kanit,sans-serif; text-decoration: none; color: #444 !important; }
+h2.page-title a:hover, h2.post-title a:hover{ color: $menu-text-red; }
 
 .home-head-title a:link, .home-head-title a:visited{ font-size: 1.2rem; text-decoration: none !important; color: #444 !important;}
 .home-head-title a:hover{ font-size: 1.2rem; text-decoration: underline; color: $menu-text-red; }
@@ -101,7 +106,7 @@ input.hideSearch:focus {
 /* END SEARCH */
 
 @media only screen and (max-width: 800px) {
-    h2.page-title{ font-size: 1.8rem; }
+    h2.page-title, h2.post-title{ font-size: 1.8rem; }
     #app-bar{ height: 55px !important; }
     #bkbeyond-logo{width:100px; padding-top:10px;}
     .expanded input {border: 0;width: 140px;}
@@ -110,7 +115,7 @@ input.hideSearch:focus {
 
 }
 @media only screen and (min-width: 801px) {
-    h2.page-title{ font-size: 2.2rem; }
+    h2.page-title, h2.post-title{ font-size: 2.2rem; }
     #bkbeyond-logo{width:130px; padding-top:15px;}
     .expanded input { border: 0; width: 180px;}
     input.showSearch { width: 180px;}

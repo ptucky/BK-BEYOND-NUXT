@@ -31,14 +31,15 @@
       <div class="swiper-button-prev hidden-lg-and-up" slot="button-prev"></div>
       <div class="swiper-button-next hidden-lg-and-up" slot="button-next"></div>
     </div>
-    
-    <WhatHappening />
-    <BannerOne />
-    <Cuisine />
-    <People />
-    <Hotel />
-    <BannerFour />
 
+    <v-container style="margin-top: -10px;">
+      <WhatHappening />
+      <BannerOne />
+      <Cuisine />
+      <People />
+      <Hotel />
+      <BannerFour />
+    </v-container>
   </v-row>
 </template>
 
@@ -103,16 +104,14 @@ export default {
 <style lang="scss" scoped>
 @media only screen and (max-width: 800px) {
   .row-cover-box{ 
-    margin-top: -70px; 
+    margin-top: -57px; 
     .swiper-slide-img { opacity: 1; }
   }
-  .swiper, .swiper-slide-img {
-    height: 380px;
-  }
+  .swiper, .swiper-slide-img { height: 380px; }
   .home-slide-image{ 
     margin-top: 0px;
     .text-slide {
-      padding: 0; margin: 0 5px; margin-top: 260px; line-height: 0.63;
+      padding: 0; margin: 0 15px; margin-top: 260px; line-height: 0.63;
       a:link, a:visited { color: #FFF; font-size: 1.1rem; font-weight: 500; background-color:rgb(0,0,0, 0.4); text-decoration: none; padding: 5px 10px;} 
       a:hover { color: #FFF; background-color:rgb(0,0,0, 0.9);}
     }
@@ -121,12 +120,10 @@ export default {
 
 @media only screen and (min-width: 801px) {
   .row-cover-box{ 
-    margin-top: -88px; 
+    margin-top: -82px; 
     .swiper-slide-img { opacity: 0.95; }
   }
-  .swiper, .swiper-slide-img {
-    height: 80vh;
-  }
+  .swiper, .swiper-slide-img { height: 80vh; }
   .home-slide-image{ 
     margin-top: 0px;
      .text-slide {

@@ -30,8 +30,10 @@ export async function getPosts(limit)
 /** Get Post Detail */
 export async function getPostDetail(postSlug) 
 {
+    let includeAuthorTag = ['authors', 'tags']
     return await api.posts.read({
         slug: postSlug,
+        include: includeAuthorTag,
     })
     .catch(err => {
         console.error(err);
@@ -73,13 +75,13 @@ export async function getTags(tagName, limit)
 export async function getTagsMain(tagNameArr, limit) 
 {
     let limitPage = (limit && limit > 1)? limit : "all"
-    let includeAuthor = "authors" //[authors, tags]
+    let includeAuthorTag = ['authors', 'tags']
 
     return await api.posts.browse(
         {
             //include: "tags,authors",
             limit: limitPage,
-            include: includeAuthor,
+            include: includeAuthorTag,
             filter: `tag: [${tagNameArr}]`,
             order: "published_at DESC"
         }

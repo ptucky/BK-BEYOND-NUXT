@@ -12,11 +12,11 @@
             <div cols="12" sm="12" md="4" class="swiper-slide" v-for="(post, index) in tags" :key="index">
               <h3 class="home-head-title text-titile-link">
                 <nuxt-link :to="{ path:  tagName + '/' + post.slug }">
-                  <img :src="post.feature_image" class="img-post" :style="{ 'height' : '250px' }">
+                  <img :src="post.feature_image" class="img-post" :style="{ 'height' : '230px' }">
                   {{ post.title }}
                 </nuxt-link>
               </h3>
-              <p class="pt-2 text-excert" v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 200) + `...`"></p>
+              <p class="pt-2 text-excert" v-if="post.excerpt" v-text="post.excerpt.replace(/(<([^>]+)>)|&nbsp;/ig, '').slice(0, 150) + `...`"></p>
             </div>
           </div>
           <div class="swiper-pagination swiper-pagination-bullets"></div>
