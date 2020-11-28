@@ -11,7 +11,7 @@
         <div class="swiper-slide" v-for="(latest, i) in latestPosts" :key="i">
           <div class="swiper-slide-img" :style="{'width': '100%', 'background-image' : `url(${latest.feature_image})` }">
             <div class="text-slide white--text" v-if="latest.title">
-              <nuxt-link :to="{ path: latest.slug }">
+              <nuxt-link :to="{ path: latest.primary_tag.slug + '/' + latest.slug }">
                 <v-chip
                   color="red"
                   text-color="white"

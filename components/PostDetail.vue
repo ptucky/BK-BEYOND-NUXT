@@ -18,13 +18,14 @@
                 </h2>
         </div>
         <div v-if="data.feature_image" class="bgImgHeader" :style="{'background-image' : `url(${data.feature_image})`}"></div>
-
-        <!-- <v-parallax
+        <!-- 
+        <v-parallax
             class="parallax-img"
-            height="400"
+            height="500"
             width="100%"
             :src="`${data.feature_image}`"
-        ></v-parallax> -->
+        ></v-parallax> 
+        -->
         
         <v-container class="grey--text text--darken-2 text-container">
             <v-row class="row-cover-box" justify="center">
@@ -55,30 +56,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 @media only screen and (max-width: 800px) {
-.post-header-box {
-    .post-title{ line-height: 1.2; }
-}
-.bgImgHeader{
-    width: 100%; height: 270px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-repeat: no-repeat!important;
-    background-size: cover!important;
-    background-position: 50%!important;
-}
+    .post-header-box {
+        .post-title{ line-height: 1.2; }
+    }
+    .bgImgHeader{
+        width: 100%; height: 270px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-repeat: no-repeat!important;
+        background-size: cover!important;
+        background-position: 50%!important;
+    }
 }
 @media only screen and (min-width: 801px) {
-.bgImgHeader{
-    width: 100%; height: 500px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-repeat: no-repeat!important;
-    background-size: cover!important;
-    background-position: 50%!important;
-}
+    .bgImgHeader{
+        width: 100%; 
+        height: 550px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-repeat: no-repeat!important;
+        background-size: cover!important;
+        background-position: 50%!important;
+    }
 }
 </style>
