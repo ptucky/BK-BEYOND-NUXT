@@ -26,13 +26,21 @@
             :src="`${data.feature_image}`"
         ></v-parallax> 
         -->
-        
+       
         <v-container class="grey--text text--darken-2 text-container">
             <v-row class="row-cover-box" justify="center">
-                <v-col v-if="data" cols="12" lg="10" md="10">
+                <v-col v-if="data" cols="12" lg="8" md="8">
                     <div class="text-left">
                         <div class="text-excert" v-if="data.html" v-html="data.html"></div>
                     </div>
+                </v-col>
+                 <v-col cols="12" lg="3" md="3">
+                    <BannerLeft />
+                </v-col>
+            </v-row>
+            <v-row class="row-cover-box" justify="center">
+                <v-col cols="12" lg="12" md="12">
+                <Latest />
                 </v-col>
             </v-row>
         </v-container> 
@@ -44,6 +52,11 @@
 export default {
     name: "PostDetailView",
     props: ["postData"],
+    components: {
+        Latest: () => import('~/components/Home/Latest.vue'),
+        BannerLeft: () => import('~/components/Home/BannerLeft.vue'),
+        BannerRight: () => import('~/components/Home/BannerRight.vue'),
+    },
     data() {
         return {
             data: this.postData

@@ -30,7 +30,7 @@
 import { getTags } from '~/api/posts';
 
 export default {
-    name: "WHatHappend",
+    name: "WhatHappend",
     data() {
         return {
           tagName: 'what-happening',

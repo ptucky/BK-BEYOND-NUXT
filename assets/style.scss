@@ -23,12 +23,29 @@ $menu-text-red: #d32f2f !important;
 .v-application .ig.grey--text:hover { color:#ec407a !important;}
 .v-application .tw.grey--text:hover { color:#4fc3f7 !important;}
 
-.swiper-pagination .swiper-pagination-bullet-active { background-color: #F44336 !important; }
-.footer{background: #e2e4eb;}
-.footer-box{ 
-    padding: 7px; text-align: center; color: $app-bar-bg-color; font-size: 0.8rem;
-    a:link{ text-decoration: none; color: $app-bar-bg-color; font-weight: 600;}
-    a:hover{ color: #F44336 !important;}
+.swiper-pagination .swiper-pagination-bullet-active { background-color: #e90606 !important; }
+.footer{
+    // background: #e2e4eb;
+    border-top:#e2e4eb 1px solid;
+    ul#menu-footer { 
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 0; }
+    ul#menu-footer li { 
+        display: block;
+        flex: 0 1 auto; /* Default */
+        list-style-type: none; padding: 5px 20px; text-align: center; font-size: 0.8rem;   text-transform: uppercase;}
+    ul#menu-footer li a { color: #8d6e63;  text-decoration: none;}
+    ul#menu-footer li a:hover{ color: #e90606 !important;}
+    .footer-box{ 
+        border-top:#e2e4eb 1px solid;
+        padding: 7px; text-align: center; color: #8b8d91; font-size: 0.8rem;
+        a:link{ text-decoration: none; color: #8b8d91; font-weight: 400;}
+        a:hover{ color: #e90606 !important;}
+    }
 }
 
 .theme--light.top-menu-dt{ color: $app-text-menu-color; font-size: 0.875rem !important; }
@@ -116,6 +133,6 @@ input.hideSearch:focus {
     #bkbeyond-logo{width:130px; padding-top:15px;}
     .expanded input { border: 0; width: 180px;}
     input.showSearch { width: 180px;}
-    .text-excert{ font-size: 0.92rem; line-height: 1.4; color: #777; }
+    .text-excert{ font-size: 1rem; line-height: 1.4; color: #777; }
 
 }

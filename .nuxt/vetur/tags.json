@@ -23,11 +23,23 @@
   "LazyBannerFour": {
     "description": "Auto imported from components/Home/BannerFour.vue"
   },
+  "BannerLeft": {
+    "description": "Auto imported from components/Home/BannerLeft.vue"
+  },
+  "LazyBannerLeft": {
+    "description": "Auto imported from components/Home/BannerLeft.vue"
+  },
   "BannerOne": {
     "description": "Auto imported from components/Home/BannerOne.vue"
   },
   "LazyBannerOne": {
     "description": "Auto imported from components/Home/BannerOne.vue"
+  },
+  "BannerRight": {
+    "description": "Auto imported from components/Home/BannerRight.vue"
+  },
+  "LazyBannerRight": {
+    "description": "Auto imported from components/Home/BannerRight.vue"
   },
   "BannerThree": {
     "description": "Auto imported from components/Home/BannerThree.vue"
@@ -53,11 +65,23 @@
   "LazyHotel": {
     "description": "Auto imported from components/Home/Hotel.vue"
   },
+  "Latest": {
+    "description": "Auto imported from components/Home/Latest.vue"
+  },
+  "LazyLatest": {
+    "description": "Auto imported from components/Home/Latest.vue"
+  },
   "People": {
     "description": "Auto imported from components/Home/People.vue"
   },
   "LazyPeople": {
     "description": "Auto imported from components/Home/People.vue"
+  },
+  "Shopping": {
+    "description": "Auto imported from components/Home/Shopping.vue"
+  },
+  "LazyShopping": {
+    "description": "Auto imported from components/Home/Shopping.vue"
   },
   "Travel": {
     "description": "Auto imported from components/Home/Travel.vue"

@@ -254,7 +254,6 @@
           router
           exact
           active-class="red--text"
-      
         >
           <v-list-item-content>
             <v-list-item-title v-text="item.title" class="text-left" />
@@ -325,14 +324,38 @@
       </v-list>
     </v-navigation-drawer>
 
-    <!-- <footer class="footer">
+    <footer class="footer">
+      
+        <v-row>
+            <v-col cols="12" sm="12" md="12" class="text-center">
+              <ul id="menu-footer"     
+                v-for="(item, i) in mainMenu"
+                :key="i">
+                  <li>
+                    <nuxt-link 
+                      :to="`${item.to}`" 
+                      :target="item.target">
+                      {{ item.title }}
+                      </nuxt-link> 
+                  </li>
+                  <li  v-for="child in item.subItems"
+                    :key="child.title">
+                      <nuxt-link 
+                      :to="`${item.to}${child.to}`" 
+                      :target="child.target">
+                      {{ child.title }}
+                      </nuxt-link> 
+                    </li>
+              </ul> 
+           </v-col>
+        </v-row>
       <div class="footer-box">
-        <a href="mailto:info@bk-beyond.com">
+        <a href="mailto:info@bk-beyond.com" class="email">
           Email: info@bk-beyond.com</a>
           <br />
           Copyright Bangkok & Beyond. All rights reserved.
       </div>
-    </footer> -->
+    </footer>
 
   </v-app>
 </template>

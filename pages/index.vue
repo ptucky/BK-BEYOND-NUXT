@@ -39,6 +39,7 @@
       <People />
       <Hotel />
       <BannerFour />
+      <Shopping />
     </v-container>
   </v-row>
 </template>
@@ -54,6 +55,7 @@ export default {
     People: () => import('~/components/Home/People.vue'),
     Hotel: () => import('~/components/Home/Hotel.vue'),
     BannerFour: () => import('~/components/Home/BannerFour.vue'),
+    Shopping: () => import('~/components/Home/Shopping.vue'),
   },
   data () {
     return {
