@@ -15,7 +15,7 @@
           flat
           color="transparent"
         >
-          <div class="m-icon-group-top text-center">
+          <div class="m-icon-group-top text-center pt-2">
             <a href="https://www.facebook.com/bangkokandbeyond" target="_blank" rel="nofollow">
                 <v-icon
                   medium
@@ -54,7 +54,7 @@
           flat
           color="transparent"
         >
-          <img src="~/assets/images/favicon-32x32.png" class="ml-10" style="width: 26px; vertical-align: middle;">
+          <img src="~/assets/images/logo-40x60.png" class="ml-10" style="width: 50px; vertical-align: middle;">
         </v-card>
 
         <v-card
