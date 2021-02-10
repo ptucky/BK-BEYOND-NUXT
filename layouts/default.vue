@@ -76,7 +76,7 @@
                 rounded
                 class="text-signup-newsletter"
               >
-                Sign Up for Newsletter
+                Contact Us
                 <v-icon
                   medium
                   class="pl-1"
@@ -87,7 +87,7 @@
             </template>
             <v-card>
               <v-card-title>
-                <span class="headline">Signup for Newsletters</span>
+                <span class="headline">Contact Us</span>
               </v-card-title>
               <v-card-text>
                 <v-container>

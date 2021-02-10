@@ -13,6 +13,7 @@
     "@nuxtjs/device": "^1.2.7",
     "@tryghost/content-api": "^1.4.7",
     "core-js": "^3.6.5",
+    "fiber": "^1.0.4",
     "nuxt": "^2.14.6",
     "nuxt-compress": "^3.0.0",
     "swiper": "5.x",
