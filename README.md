@@ -1,4 +1,4 @@
-# BK-BEYOND
+# Nuxtjs + swiper + Headless GhostCMS (Nodejs)
 
 ## Build Setup
 
